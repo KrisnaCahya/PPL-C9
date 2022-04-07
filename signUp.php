@@ -16,41 +16,41 @@
                 <h1 class="col mx-0 my-5"style="color:#06DA3E;">KRIPSKUY</h1>
             </div>
             </div>
-                <form>
+                <form action="proses-daftar.php" method="post">
                     <div class="row mb-3">
-                        <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+                        <label for="username" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="Masukkan Email">
+                        <input type="text" class="form-control" id="username" name = "username" placeholder="Masukkan Username" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                        <label for="name" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder= "Masukkan Alamat">
+                        <input type="text" class="form-control" id="name" name = "name" placeholder="Masukkan Nama" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                        <label for="nohp" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder= "Masukkan No.Telepon">
+                            <input type="text" class="form-control" id="nohp" name = "nohp" placeholder= "Masukkan No.Telepon" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                        <label for="email" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input type="password" class="form-control" id="inputPassword3" placeholder= "Masukkan Email">
+                            <input type="email" class="form-control" id="email" name = "email" placeholder= "Masukkan Email" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                        <label for="password" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder= "Masukkan Password">
+                        <input type="password" class="form-control" id="password" name = "password" placeholder= "Masukkan Password" required>
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="inputPassword3" class="col-sm-2 col-form-label"></label>
+                        <label for="repassword" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder= "Konfirmasi Password">
+                        <input type="password" class="form-control" id="repassword" name = "repassword" placeholder= "Konfirmasi Password" required>
                         </div>
                     </div>
                     <div class="text-right">

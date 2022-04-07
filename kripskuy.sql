@@ -19,15 +19,18 @@ USE `kripskuy`;
 
 -- Dumping structure for table kripskuy.user
 CREATE TABLE IF NOT EXISTS `user` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `password` varchar(50) CHARACTER SET utf8 NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `nohp` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Dumping data for table kripskuy.user: ~0 rows (approximately)
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-REPLACE INTO `user` (`id`, `username`, `password`) VALUES
-	(1, 'a', 'a');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
