@@ -16,7 +16,7 @@
                 <h1 class="col mx-0 my-5"style="color:#06DA3E;">KRIPSKUY</h1>
             </div>
             </div>
-                <form action="proses-login.php" method="get">
+                <form action="proses-login.php" method="post">
                     <div class="row mb-3">
                         <label for="username" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
