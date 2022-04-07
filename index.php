@@ -29,7 +29,7 @@
                     </div>
                     <div class="text-center my-2 mb-5">
                         <input class="btn btn-warning mx-auto col-sm-5 mb-3 mt-3" type="submit" name="Submit" value="Login">
-                        <p>Tidak punya akun? <a href="signUp.php">Daftar</a>.</p>
+                        <p>Tidak punya akun? <a href="signUp.php">Daftar</a></p>
                     </div>
                 </form>
             </div>
