@@ -1,11 +1,8 @@
 <?php
     include 'config.php';
 
-    extract($_GET);
-    // $email = $_POST['email'];
-    // $password = $_POST['password'];
-    if(isset($_GET['username'], $_GET['password'])){
-        echo ($username + $password);
+    $username = $_POST['username'];
+    $password = $_POST['password'];
     }
 
     if (!empty($email) && !empty($password)) {
