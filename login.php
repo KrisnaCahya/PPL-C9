@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="styling/style.css">
     <title>Document</title>
 </head>
 
@@ -20,12 +21,14 @@
                     <div class="row mb-3">
                         <label for="username" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input class="form-control" type="text" id="username" name="username" placeholder="Masukkan username" required>
+                            <input class="form-control" type="text" id="username" name="username" placeholder="Masukkan username" required>
+                        </div>
                     </div>
                     <div class="row mb-3">
                         <label for="password" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                        <input class="form-control" type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                        </div>
                     </div>
                     <div class="text-center my-2 mb-5">
                         <input class="btn btn-warning mx-auto col-sm-5 mb-3 mt-3" type="submit" name="Submit" value="Login">
