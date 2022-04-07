@@ -17,10 +17,10 @@
                     <div class="card-body">
                         <div class="col">
                             <div class="row">
-                                <img src="https://cdn-icons.flaticon.com/png/512/1144/premium/1144760.png?token=exp=1649305552~hmac=1e3c611fd3b611e5854a0895b1fa9ea6" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                <img src="https://cdn-icons.flaticon.com/png/512/3177/premium/3177283.png?token=exp=1649370003~hmac=3b7096bfc8db0007a4cba54a2de32d5c" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                             </div>
                             <div class="row">
-                                <p class="text-center mt-3">Profil Mitra</p>
+                                <p class="text-center mt-4">Profil Mitra</p>
                             </div>
                         </div>
                     </div>  
@@ -31,7 +31,7 @@
                     <div class="card-body">
                         <div class="col">
                             <div class="row">
-                                <img src="https://cdn-icons.flaticon.com/png/512/3091/premium/3091237.png?token=exp=1649345229~hmac=89415184f08d7133670dff3f7e4b737b" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                <img src="https://cdn-icons-png.flaticon.com/512/2521/2521782.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                             </div>
                             <div class="row">
                                 <p class="text-center mt-4">Profil Pegawai</p>
