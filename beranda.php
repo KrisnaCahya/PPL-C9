@@ -15,15 +15,17 @@
             <div class="col-4">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
-                        <div class="col">
-                            <div class="row">
-                                <img src="https://cdn-icons.flaticon.com/png/512/3177/premium/3177283.png?token=exp=1649370003~hmac=3b7096bfc8db0007a4cba54a2de32d5c" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                        <a href="profile_mitra.php">
+                            <div class="col">
+                                <div class="row">
+                                    <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                </div>
+                                <div class="row">
+                                    <p class="text-center mt-3">Profil Mitra</p>
+                                </div>
                             </div>
-                            <div class="row">
-                                <p class="text-center mt-4">Profil Mitra</p>
-                            </div>
-                        </div>
-                    </div>  
+                        </a> 
+                    </div>     
                 </div>
             </div>
             <div class="col-4">
@@ -31,7 +33,7 @@
                     <div class="card-body">
                         <div class="col">
                             <div class="row">
-                                <img src="https://cdn-icons-png.flaticon.com/512/2521/2521782.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774487697760316/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                             </div>
                             <div class="row">
                                 <p class="text-center mt-4">Profil Pegawai</p>
@@ -80,7 +82,7 @@
                                 </div>
                                 <div class="row">
                                     <p class="text-center mt-4">Produk</p>
-                                </div>
+                                </div>  
                             </div>
                         </div>  
                     </div>

@@ -56,7 +56,7 @@
                     </div>
                     <div class="text-right">
                         <input class="btn btn-warning mx-auto col-sm-4 mb-5 mt-3" type="submit" name="Daftar" value="Daftar">
-                        <p>Sudah punya akun? <a href="index.php">Login</a>.</p>   
+                        <p>Sudah punya akun? <a href="login.php">Login</a>.</p>   
                     </div>
                 </form>
             </div>

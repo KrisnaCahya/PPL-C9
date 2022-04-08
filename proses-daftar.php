@@ -36,18 +36,32 @@ if( isset($_POST['Daftar']) ){
                     //jika insert data berhasil maka akan diredirect ke halaman index.php serta menyimpan data username ke session
                     if ($result) {
                         $_SESSION['username'] = $username;
+                        // $message = "Berhasil";
+                        // echo "<script type='text/javascript'>alert('$message');</script>";
                         
                         header('Location: beranda.php');
                      
                     //jika gagal maka akan menampilkan pesan error
                     } else {
                         $error =  'Register User Gagal !!';
+                        // $message = "Register User Gagal !!";
+                        // echo "<script type='text/javascript'>alert('$message');</script>";
+
+                        header('Location: signUp.php');
                     }
                 }else{
                         $error =  'Username sudah terdaftar !!';
+                        // $message = "Username sudah terdaftar !!";
+                        // echo "<script type='text/javascript'>alert('$message');</script>";
+
+                        header('Location: signUp.php');
                 }
             }else{
                 $validate = 'Password tidak sama !!';
+                // $message = "Password tidak sama !!!";
+                // echo "<script type='text/javascript'>alert('$message');</script>";
+                
+                header('Location: signUp.php');
             }
              
         }else {
