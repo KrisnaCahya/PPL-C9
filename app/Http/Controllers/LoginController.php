@@ -29,7 +29,11 @@ class LoginController extends Controller
             // regenerate untuk menghindari session fixation (masuk ke dalam keamanan menggunakan session yang sama)
             $request -> session() -> regenerate();
             // Beralih ke halaman beranda
-            return redirect() -> intended('/berandaMitra');
+            if(Auth::user()->role == 'pegawai'){
+                return redirect() -> intended('/berandaPegawai');
+            } else{
+                return redirect() -> intended('/berandaMitra');
+            }
         }
         
         // Jika gagal, akan dikembalikan ke menu login dengan menampilkan pesan error

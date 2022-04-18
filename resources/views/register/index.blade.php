@@ -75,16 +75,6 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="role" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>Pilih peran</option>
-                                <option value="owner">Owner</option>
-                                <option value="pegawai">Pegawai</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
                         <label for="password" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
                             <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name = "password" placeholder= "Masukkan Password">

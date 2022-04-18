@@ -7,9 +7,9 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
-    // Method untuk mengambil seluruh data user
+    // Method untuk mengambil data user
     public function index(){
-        $data = User::all();
+        $data = User::where('role', 'pegawai')->get();
         return view('profilPegawai',['data'=>$data]);
     }
 

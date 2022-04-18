@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->text('alamat');
             $table->string('password');
+            $table->string('role')->default('pegawai');
             $table->rememberToken();
             $table->timestamps();
         });
