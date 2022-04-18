@@ -18,35 +18,35 @@
                 </div>
             </div>
         <form method="post" action="/profilMitra/update" >
-          @method("put")
           @csrf
+          @method('PUT')
               <label class="form-label mx-3">Nama</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control mx-3 mb-3" name="nama" style="width: 560px;" value="{{ old('nama', Auth::user()->nama) }}"/>
+                <input type="text" class="form-control mx-3 mb-3" name="nama" style="width: 560px;" value="{{ $user->nama }}"/>
               </div>
           <div class="form-group">
             <label class="form-label mx-3">Email</label>
             <div class="col-sm-8">
-              <input type="email" class="form-control mx-3 mb-3" name="email" style="width: 560px;" value="{{ old('email', Auth::user()->email) }}"/>
+              <input type="email" class="form-control mx-3 mb-3" name="email" style="width: 560px;" value="{{ $user->email }}"/>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label mx-3">No.Telepon</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control mx-3 mb-3" name="nohp" style="width: 560px;" value="{{ old('nohp', Auth::user()->nohp) }}"/>
+              <input type="number" class="form-control mx-3 mb-3" name="nohp" style="width: 560px;" value="{{ $user->nohp }}"/>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label mx-3">Alamat</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control mx-3 mb-3" name="alamat" style="width: 560px;" value="{{ old('alamat', Auth::user()->alamat) }}"></textarea>
+              <input type="text" class="form-control mx-3 mb-3" name="alamat" style="width: 560px;" value="{{ $user->alamat }}"></textarea>
             </div>
           </div>
           <div class="form-group">
               <div class="row">
                   <div class="text-center">
                       <input class="btn btn-danger col-sm-3 mb-5 mt-3 m-4" type="button" onclick="window.location.href = 'profilMitra';" name="Batal" value="Batal" >  
-                      <input class="btn btn-success col-sm-3 mb-5 mt-3 m-4" type="submit" name="Simpan" value="Simpan">  
+                      <input class="btn btn-success col-sm-3 mb-5 mt-3 m-4" type="submit" name="Simpan" value="Simpan" onClick="confirm('Apakah yakin ingin mengubah data?')">  
                     </div>
                 </div>
           </div>

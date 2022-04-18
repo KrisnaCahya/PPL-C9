@@ -11,9 +11,18 @@
 
   <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-5">
-        <div class="card container-fluid mx-auto" style="margin-top: 80px;margin-left: 10px;">
-            <div class="card-body">
-                <div class="row">
+      @if(session()->has('updateSuccess'))
+      <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+          <!-- mencetak flash message dengan key updateSuccess -->
+          {{ session('updateSuccess') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      @endif
+      <div class="text-center">
+        </div>
+        <div class="card container-fluid mx-auto" style="margin-top: 30px;margin-left: 10px;">
+          <div class="card-body">
+            <div class="row">
                     <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 80px;height: 55px;" class="mx-auto mt-3 mb-5">
                 </div>
             </div>
@@ -42,7 +51,7 @@
           </div>
           <div class="form-group">
             <div class="text-center">
-              <a class="btn btn-warning mb-5" href="ubahProfil">Ubah Data</a> 
+              <a class="btn btn-warning mb-5 mt-4" href="/ubahProfil">Ubah Data</a> 
             </div>
           </div>
         </form>

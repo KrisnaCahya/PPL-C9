@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ubahProfilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,11 +33,11 @@ Route::get('/profilMitra', function () {
     return view('profilMitra');
 });
 
-Route::get('/ubahProfil', function () {
-    return view('ubahProfil');});
-
+// Route untuk menuju ke form ubah profil
+Route::get('/ubahProfil', [ubahProfilController::class, 'edit']);
 // Route untuk update data profil
-Route::put('/profilMitra/update', [ProfileController::class, 'update']);
+Route::put('/profilMitra/update', [ubahProfilController::class, 'update']);
+
 
 // Route menampilkan profil pegawai
 Route::get('/profilPegawai', [ProfileController::class, 'index']);
