@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2022 at 06:00 AM
+-- Generation Time: Apr 18, 2022 at 12:05 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -58,8 +58,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_04_10_200127_create_transactions_table', 1),
-(6, '2022_04_10_201118_create_products_table', 1);
+(5, '2022_04_10_201118_create_products_table', 1);
 
 -- --------------------------------------------------------
 
@@ -109,22 +108,6 @@ CREATE TABLE `products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
---
-
-CREATE TABLE `transactions` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `tanggal_pencatatan` timestamp NULL DEFAULT NULL,
-  `pemasukan` int(11) NOT NULL,
-  `pengeluaran` int(11) NOT NULL,
-  `keuntungan` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -136,6 +119,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `alamat` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'pegawai',
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -145,10 +129,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `nama`, `nohp`, `email`, `alamat`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(9, 'mitra', 'mitra', '081253424333', 'mitra@gmail.com', 'Kota Bogor', '$2y$10$W8pM8GwrULYOZDjeEx9Gje/RLQhWTPaNx/QSwP/GkvC9vgToixg0y', NULL, '2022-04-12 04:17:59', '2022-04-12 04:17:59'),
-(10, 'admin', 'admin', '089273653281', 'admin@gmail.com', 'Tangerang', '$2y$10$aYmn0riIMu487a/ubGUHj.h25gNF9toQpjFSAmd3mnUY6SZT0WpQe', NULL, '2022-04-12 18:30:52', '2022-04-12 18:30:52'),
-(11, 'fkrsyy', 'Fikri Ariqsya', '081364739191', 'fikriariqsyarahman98@gmail.com', 'Bekasi', '$2y$10$4T99zQCnUx8dwNuasu5oB.o2IQZbBKwG52QXHV7AUSiJrLGh8aurG', NULL, '2022-04-15 20:44:29', '2022-04-15 20:44:29');
+INSERT INTO `users` (`id`, `username`, `nama`, `nohp`, `email`, `alamat`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'fkrsyy', 'Fikri Ariqsya', '081364739191', 'fikriariqsyarahman98@gmail.com', 'Bekasi', '$2y$10$rEiCOuWSUt5lQDMsTiSDxe8qmUx9dAAy4lu7Mx9jHgXC73fxaTFeK', 'mitra', NULL, '2022-04-18 01:18:40', '2022-04-18 01:18:40'),
+(2, 'pegawai1', 'pegawai 1', '081278459432', 'pegawai1@gmail.com', 'Bogor', '$2y$10$545um4iTRDOKuLBOw2BcMOJNxcpnJq0DyQ34CMZYsKdeKT/zde2ui', 'pegawai', NULL, '2022-04-18 01:26:16', '2022-04-18 01:26:16');
 
 --
 -- Indexes for dumped tables
@@ -188,12 +171,6 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -214,7 +191,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -229,16 +206,10 @@ ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `transactions`
---
-ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
