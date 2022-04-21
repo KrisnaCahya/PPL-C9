@@ -20,6 +20,14 @@
     width: 605px;
 }
 
-.container.mt-4.mb-4{
+/* .container.mt-4.mb-4{
     border-radius: 30px;
+} */
+
+.title.mx-5.mt-3{
+    font-size:50px;
+    color: white;
+}
+.welcomeWord.mx-5.mt-3{
+    color: white;
 }

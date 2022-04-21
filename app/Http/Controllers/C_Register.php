@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class RegisterController extends Controller
+class C_Register extends Controller
 {
     
     public function index() 
@@ -40,6 +40,9 @@ class RegisterController extends Controller
             $request->session()->flash('success','Akun berhasil dibuat! Silahkan login');
             // Mengalihkan ke halaman login
             return redirect('/login');
+        }else{
+            $request->session()->flash('failedConfirmPass','Konfirmasi password tidak sesuai, Harap periksa kembali!');
+            return redirect('/register');
         }
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class C_Login extends Controller
 {
     // Method untuk menampilkan halaman login
     public function index(){
@@ -37,7 +37,7 @@ class LoginController extends Controller
         }
         
         // Jika gagal, akan dikembalikan ke menu login dengan menampilkan pesan error
-        return back()-> with('loginError', 'Login gagal ! Silahkan coba lagi');
+        return back()-> with('loginError', 'Data tidak valid!');
     }
     
     // Method untuk logout

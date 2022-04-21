@@ -10,7 +10,7 @@ class ProfileController extends Controller
     // Method untuk mengambil data user
     public function index(){
         $data = User::where('role', 'pegawai')->get();
-        return view('profilPegawai',['data'=>$data]);
+        return view('/profilPegawai',['data'=>$data]);
     }
 
 

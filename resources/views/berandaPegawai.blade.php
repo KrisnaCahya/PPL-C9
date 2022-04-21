@@ -21,7 +21,7 @@
                                     <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                                 </div>
                                 <div class="row">
-                                    <p class="text-center mt-4">Profil Mitra</p>
+                                    <p class="text-center mt-4">Profil Pegawai</p>
                                 </div>
                             </div>
                         </a> 

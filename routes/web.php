@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\C_Login;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\C_Register;
 use App\Http\Controllers\ubahProfilController;
 
 /*
@@ -33,10 +33,18 @@ Route::get('/profilMitra', function () {
     return view('profilMitra');
 });
 
+Route::get('/profilPegawai', function () {
+    return view('pprofilPegawai');
+});
+Route::get('/tes', function () {
+    return view('tes');
+});
+
+
 // Route untuk menuju ke form ubah profil
 Route::get('/ubahProfil', [ubahProfilController::class, 'edit']);
 // Route untuk update data profil
-Route::put('/profilMitra/update', [ubahProfilController::class, 'update']);
+Route::post('/profilMitra/update', [ubahProfilController::class, 'update']);
 
 
 // Route menampilkan profil pegawai
@@ -47,17 +55,17 @@ Route::post('/profilPegawai/hapus', [ProfileController::class, 'hapus']);
 
 // REGISTER
 // Menampilkan halaman register
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [C_Register::class, 'index']);
 
 // Route untuk create akun baru
-Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/register', [C_Register::class, 'store']);
 
 // LOGIN
 // Menampilkan view form login
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [C_Login::class, 'index']);
 
 // Mengotentikasi data request dengan database untuk login
-Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/login', [C_Login::class, 'authenticate']);
 
 // Route untuk logout
-Route::post('/logout', [LoginController::class, 'logout']);
+Route::post('/logout', [C_Login::class, 'logout']);

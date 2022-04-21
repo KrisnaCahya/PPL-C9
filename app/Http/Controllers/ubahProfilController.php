@@ -14,21 +14,15 @@ class ubahProfilController extends Controller
     }
 
     public function update(Request $request){
-        $user = auth()->user();
-        $request->validate([
+        // dd($request);
+        $validatedData = $request->validate([
             'nama' => ['required','min:5'],
-            'nohp' => ['required','min:5','max:15','unique:users'],
-            'email' => ['required','email','unique:users'],
+            'nohp' => ['required','min:5','max:15'],
+            'email' => ['required','email'],
             'alamat' => ['required','min:5','max:200'],
         ]);
-        $user->update([
-            'nama' => $request->nama,
-            'email' => $request->email,
-            'nohp' => $request->nohp,
-            'alamat' => $request->alamat,
-
-        ]);
-
+        
+        User::where('id',$request->id) -> update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
         return redirect('/profilMitra');
 
