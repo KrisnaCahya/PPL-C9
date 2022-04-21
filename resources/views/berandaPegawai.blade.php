@@ -15,7 +15,7 @@
             <div class="col-4">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
-                        <a style="text-decoration:none;color:black;" href="/profilMitra">
+                        <a style="text-decoration:none;color:black;" href="/profil">
                             <div class="col">
                                 <div class="row">
                                     <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">

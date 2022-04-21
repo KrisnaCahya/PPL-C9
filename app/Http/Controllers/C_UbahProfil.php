@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class ubahProfilController extends Controller
+class C_UbahProfil extends Controller
 {
     public function edit(){
         return view('/ubahProfil')->with('user', auth()->user());
@@ -24,7 +24,7 @@ class ubahProfilController extends Controller
         
         User::where('id',$request->id) -> update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
-        return redirect('/profilMitra');
+        return redirect('/profil');
 
     }
 }

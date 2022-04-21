@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_Login;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\C_ProfilPegawai;
 use App\Http\Controllers\C_Register;
-use App\Http\Controllers\ubahProfilController;
+use App\Http\Controllers\C_UbahProfil;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +29,8 @@ Route::get('/berandaPegawai', function () {
     return view('berandaPegawai');
 });
 
-Route::get('/profilMitra', function () {
-    return view('profilMitra');
+Route::get('/profil', function () {
+    return view('profil');
 });
 
 Route::get('/profilPegawai', function () {
@@ -42,16 +42,16 @@ Route::get('/tes', function () {
 
 
 // Route untuk menuju ke form ubah profil
-Route::get('/ubahProfil', [ubahProfilController::class, 'edit']);
+Route::get('/ubahProfil', [C_UbahProfil::class, 'edit']);
 // Route untuk update data profil
-Route::post('/profilMitra/update', [ubahProfilController::class, 'update']);
+Route::post('/profil/update', [C_UbahProfil::class, 'update']);
 
 
 // Route menampilkan profil pegawai
-Route::get('/profilPegawai', [ProfileController::class, 'index']);
+Route::get('/profilPegawai', [C_ProfilPegawai::class, 'index']);
 
 // Route untuk delete
-Route::post('/profilPegawai/hapus', [ProfileController::class, 'hapus']);
+Route::post('/profilPegawai/hapus', [C_ProfilPegawai::class, 'hapus']);
 
 // REGISTER
 // Menampilkan halaman register

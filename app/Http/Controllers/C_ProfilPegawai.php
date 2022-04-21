@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 
-class ProfileController extends Controller
+class C_ProfilPegawai extends Controller
 {
     // Method untuk mengambil data user
     public function index(){

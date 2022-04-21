@@ -17,7 +17,7 @@
                     <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 80px;height: 55px;" class="mx-auto mt-3 mb-5">
                 </div>
             </div>
-        <form method="post" action="/profilMitra/update" >
+        <form method="post" action="/profil/update" >
           @csrf
           <div class="row mb-3">
               <label for="name" class="col-sm-2 col-form-label"></label>
@@ -66,7 +66,7 @@
           <div class="form-group">
               <div class="row">
                   <div class="text-center">
-                      <input class="btn btn-danger mx-auto col-sm-4 mb-5 mt-3" type="button" onclick="window.location.href = 'profilMitra';" name="Batal" value="Batal" >
+                      <input class="btn btn-danger mx-auto col-sm-4 mb-5 mt-3" type="button" onclick="window.location.href = 'profil';" name="Batal" value="Batal" >
                       <input class="btn btn-success mx-auto col-sm-4 mb-5 mt-3" type="submit" name="Simpan" value="Simpan" onClick="confirm('Apakah yakin ingin mengubah data?')">  
                       <input type="hidden" name="id" value="{{ $user->id }}">
                     </div>
