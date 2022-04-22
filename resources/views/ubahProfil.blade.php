@@ -19,8 +19,8 @@
             </div>
         <form method="post" action="/profil/update" >
           @csrf
-          <div class="row mb-3">
-              <label for="name" class="col-sm-2 col-form-label"></label>
+          <div class="row mb-4">
+              <label for="name" class="col-sm-2 col-form-label">Nama</label>
               <div class="col-sm-8">
                   <input type="text" class="form-control @error('name') is-invalid @enderror" id="nama" name = "nama" placeholder="Masukkan nama" value="{{ $user->nama }}">
                   @error('name')
@@ -30,8 +30,8 @@
                   @enderror
               </div>
           </div>
-          <div class="row mb-3">
-              <label for="email" class="col-sm-2 col-form-label"></label>
+          <div class="row mb-4">
+              <label for="email" class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-8">
                   <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name = "email" placeholder="Masukkan email" value="{{ $user->email }}">
                   @error('email')
@@ -41,8 +41,8 @@
                   @enderror
               </div>
           </div>
-          <div class="row mb-3">
-              <label for="nohp" class="col-sm-2 col-form-label"></label>
+          <div class="row mb-4">
+              <label for="nohp" class="col-sm-2 col-form-label">No. Telepon</label>
               <div class="col-sm-8">
                   <input type="text" class="form-control @error('nohp') is-invalid @enderror" id="nohp" name = "nohp" placeholder="Masukkan nohp" value="{{ $user->nohp }}">
                   @error('nohp')
@@ -53,7 +53,7 @@
               </div>
           </div>
           <div class="row mb-3">
-              <label for="alamat" class="col-sm-2 col-form-label"></label>
+              <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
               <div class="col-sm-8">
                   <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name = "alamat" placeholder="Masukkan alamat" value="{{ $user->alamat }}">
                   @error('alamat')

@@ -8,25 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body style="background-color:#89C791;">
-    <div class="row" style="background-color:#ffffff;">
+<body style="background-color:#9DC4A2;"class="welcome">
+    <div class="row" style="background-color:#E6F6E8;">
         <p class="header mx-5 mt-3">
             KripsKuy
         </p>
     </div>
     <div class="row">
-        <div class="col-5"style="margin-top: 100px;">
+        <div class="col-5"style="margin-top: 150px;">
             <div class="container">
-                <p class="title mx-5 mt-3" >Selamat Datang</p>
-                <p class="welcomeWord mx-5 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illo optio maxime nobis eos magni harum voluptatem enim voluptatum soluta libero molestiae sint veniam sequi quibusdam accusantium est totam illum sapiente porro voluptatibus assumenda dolorem, ad quo. Animi odio, deserunt velit fugit aut sequi eius et similique, quasi maxime cumque praesentium corporis temporibus ullam veritatis omnis incidunt amet minus, tempora reprehenderit natus? Nemo, sapiente blanditiis error atque quas commodi eveniet consequuntur odit voluptas, iste quia accusamus, rerum expedita modi optio! Nihil quisqua</p>
-                <button class="btn btn-light mx-5 mt-3 shadow mb-5 bg-body rounded">Masuk</button>
+                <p class="title mx-5 mt-3" >Selamat Datang,</p> 
+                <p class="welcomeWord mx-5 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illo optio maxime nobis eos magni harum voluptatem enim voluptatum soluta libero molestiae sint veniam sequi quibusdam accusantium est totam illum sapiente porro voluptatibus assumenda dolorem, ad quo. Animi odio, deserunt velit fugit aut sequi eius et similique, quasi maxime cumque praesentium corporis temporibus ullam veritatis omnis incidunt amet minus, tempora reprehenderit natus?</p>
+                <a href="/login" class="btn btn-light mx-5 mt-3 shadow mb-5 bg-body rounded px-4">Masuk</a>
             </div>
         </div>
 
-            <div class="col-7">
-                <div class="text-end">
-                    <img src="img/group.png" alt="">
-                </div>
+        <div class="col-7">
+            <div class="text-end wing">
+                <img src="img/pngwing.png" style="width: 150px;height: 150px;" class="leaf" alt="">
+            </div>
+            <div class="text-end group">
+                <img src="img/group.png" alt="" style="width: 350px;height: 350px;">
             </div>
         </div>
 </body>

@@ -24,10 +24,37 @@
     border-radius: 30px;
 } */
 
+.header.mx-5.mt-3{
+    font-weight: 700;
+}
+
 .title.mx-5.mt-3{
     font-size:50px;
     color: white;
+    font-weight: 700;
+    letter-spacing: 3px;
 }
 .welcomeWord.mx-5.mt-3{
     color: white;
+    text-align: left;
+}
+
+.text-end.wing{
+    margin-top: 70px;
+    margin-right: 900px;
+    float: right;
+}
+
+.text-end.group{
+    margin-top: 100px;
+    margin-right: 80px;
+    float: right;
+}
+
+.btn{
+    font-weight: bold;
+}
+
+.welcome{
+    position: fixed;
 }
