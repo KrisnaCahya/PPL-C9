@@ -19,10 +19,10 @@
             </div>
         <form method="post" action="/profil/update" >
           @csrf
-          <div class="row mb-4">
-              <label for="name" class="col-sm-2 col-form-label">Nama</label>
+          <div class="row mb-3">
+              <label for="name" class="form-label mx-3">Nama</label>
               <div class="col-sm-8">
-                  <input type="text" class="form-control @error('name') is-invalid @enderror" id="nama" name = "nama" placeholder="Masukkan nama" value="{{ $user->nama }}">
+                  <input type="text" style="width: 550px;" class="form-control mx-3 mb-3 @error('name') is-invalid @enderror" id="nama" name = "nama" placeholder="Masukkan nama" value="{{ $user->nama }}">
                   @error('name')
                   <div class="invalid-feedback">
                       {{ $message }}
@@ -30,10 +30,10 @@
                   @enderror
               </div>
           </div>
-          <div class="row mb-4">
-              <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="row mb-3">
+              <label for="email" class="form-label mx-3">Email</label>
               <div class="col-sm-8">
-                  <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name = "email" placeholder="Masukkan email" value="{{ $user->email }}">
+                  <input type="text" style="width: 550px;" class="form-control mx-3 mb-3 @error('email') is-invalid @enderror" id="email" name = "email" placeholder="Masukkan email" value="{{ $user->email }}">
                   @error('email')
                   <div class="invalid-feedback">
                       {{ $message }}
@@ -41,10 +41,10 @@
                   @enderror
               </div>
           </div>
-          <div class="row mb-4">
-              <label for="nohp" class="col-sm-2 col-form-label">No. Telepon</label>
+          <div class="row mb-3">
+              <label for="nohp" class="form-label mx-3">No. Telepon</label>
               <div class="col-sm-8">
-                  <input type="text" class="form-control @error('nohp') is-invalid @enderror" id="nohp" name = "nohp" placeholder="Masukkan nohp" value="{{ $user->nohp }}">
+                  <input type="text" style="width: 550px;" class="form-control mx-3 mb-3 @error('nohp') is-invalid @enderror" id="nohp" name = "nohp" placeholder="Masukkan nohp" value="{{ $user->nohp }}">
                   @error('nohp')
                   <div class="invalid-feedback">
                       {{ $message }}
@@ -53,9 +53,9 @@
               </div>
           </div>
           <div class="row mb-3">
-              <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
+              <label for="alamat" class="form-label mx-3">Alamat</label>
               <div class="col-sm-8">
-                  <input type="text" class="form-control @error('alamat') is-invalid @enderror" id="alamat" name = "alamat" placeholder="Masukkan alamat" value="{{ $user->alamat }}">
+                  <input type="text" style="width: 550px;" class="form-control mx-3 mb-3 @error('alamat') is-invalid @enderror" id="alamat" name = "alamat" placeholder="Masukkan alamat" value="{{ $user->alamat }}">
                   @error('alamat')
                   <div class="invalid-feedback">
                       {{ $message }}
@@ -66,8 +66,8 @@
           <div class="form-group">
               <div class="row">
                   <div class="text-center">
-                      <input class="btn btn-danger mx-auto col-sm-4 mb-5 mt-3" type="button" onclick="window.location.href = 'profil';" name="Batal" value="Batal" >
-                      <input class="btn btn-success mx-auto col-sm-4 mb-5 mt-3" type="submit" name="Simpan" value="Simpan" onClick="confirm('Apakah yakin ingin mengubah data?')">  
+                      <input class="btn btn-danger mx-5 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'profil';" name="Batal" value="Batal" >
+                      <input class="btn btn-success mx-5 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan" onClick="confirm('Apakah yakin ingin mengubah data?')">  
                       <input type="hidden" name="id" value="{{ $user->id }}">
                     </div>
                 </div>

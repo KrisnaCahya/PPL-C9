@@ -8,23 +8,28 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-    
-<body style="background-color:#DEF7E5;">
-    <div class="container my-5 py-5 col-xl-5">
-    <div class="card container-fluid text-center mx-auto" style="margin-top: 50px;">
-        <div class="card-body">
-            <div class="row">
-                <h1 class="col mx-0 my-5"style="color:#06DA3E;">SELAMAT DATANG</h1>
-            </div>
-            </div>
-                <form>
-                    <img src='img/gambar.png' style="width:250px;height:250px";/> 
-                    <div class="text-center my-2 mb-5">
-                        <input class="btn btn-warning mx-auto col-sm-5 mb-3 mt-3" type="button" onclick="window.location.href = 'login';" value="Mulai"/>
-                    </div>
-                </form>
+<body style="background-color:#9DC4A2;"class="welcome">
+    <div class="row" style="background-color:#E6F6E8;">
+        <p class="header mx-5 mt-3">
+            KripsKuy
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-5"style="margin-top: 150px;">
+            <div class="container">
+                <p class="title mx-5 mt-3" >Selamat Datang,</p> 
+                <p class="welcomeWord mx-5 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illo optio maxime nobis eos magni harum voluptatem enim voluptatum soluta libero molestiae sint veniam sequi quibusdam accusantium est totam illum sapiente porro voluptatibus assumenda dolorem, ad quo. Animi odio, deserunt velit fugit aut sequi eius et similique, quasi maxime cumque praesentium corporis temporibus ullam veritatis omnis incidunt amet minus, tempora reprehenderit natus?</p>
+                <a href="/login" class="btn btn-light mx-5 mt-3 shadow mb-5 bg-body rounded px-4">Masuk</a>
             </div>
         </div>
-    </div>
+
+        <div class="col-7">
+            <div class="text-end wing">
+                <img src="img/pngwing.png" style="width: 150px;height: 150px;" class="leaf" alt="">
+            </div>
+            <div class="text-end group">
+                <img src="img/group.png" alt="" style="width: 350px;height: 350px;">
+            </div>
+        </div>
 </body>
 </html>

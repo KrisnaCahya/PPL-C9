@@ -76,19 +76,21 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
-                        <div class="card-body">
-                            <div class="col">
-                                <div class="row">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/1524/1524539.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
-                                </div>
-                                <div class="row">
-                                    <p class="text-center mt-4">Produk</p>
-                                </div>
+                <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
+                    <div class="card-body">
+                    <a style="text-decoration:none;color:black;" href="/produk">
+                        <div class="col">
+                            <div class="row">
+                                <img src="https://cdn-icons-png.flaticon.com/512/1524/1524539.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                             </div>
-                        </div>  
-                    </div>
+                            <div class="row">
+                                <p class="text-center mt-4">Produk</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>  
                 </div>
+            </div>
                 <div class="col-4">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
@@ -96,7 +98,7 @@
                             <form action="/logout" method="POST">
                                 <div class="col">
                                     <div class="row">
-                                        <img src="https://cdn-icons.flaticon.com/png/512/4400/premium/4400314.png?token=exp=1649769212~hmac=e9edc553b415e1250b41cf3806026ca2" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                                     </div>
                                     <div class="row">
                                         <div class="text-center">

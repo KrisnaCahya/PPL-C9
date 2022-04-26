@@ -11,14 +11,14 @@
 
   <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-5">
-      @if(session()->has('updateSuccess'))
-      <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-          <!-- mencetak flash message dengan key updateSuccess -->
-          {{ session('updateSuccess') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      </div>
-      @endif
       <div class="text-center">
+        @if(session()->has('updateSuccess'))
+        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+            <!-- mencetak flash message dengan key updateSuccess -->
+            {{ session('updateSuccess') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         </div>
         <div class="card container-fluid mx-auto" style="margin-top: 30px;margin-left: 10px;">
           <div class="card-body">

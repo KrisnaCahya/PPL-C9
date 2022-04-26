@@ -7,7 +7,8 @@
 }
 
 .card.container-fluid.text-center.mx-auto{
-    border-radius: 60px;
+    border-radius: 20px;
+    position: relative;
 }
 
 .alert.alert-success.alert-dismissible.fade.show.mt-4{
@@ -20,9 +21,9 @@
     width: 605px;
 }
 
-/* .container.mt-4.mb-4{
+.container.mt-4.mb-4{
     border-radius: 30px;
-} */
+}
 
 .header.mx-5.mt-3{
     font-weight: 700;
@@ -51,10 +52,14 @@
     float: right;
 }
 
-.btn{
+/* .btn{
     font-weight: bold;
-}
+} */
 
 .welcome{
     position: fixed;
+}
+
+.btn{
+    border-radius: 20px;
 }
