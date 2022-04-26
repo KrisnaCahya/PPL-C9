@@ -52,7 +52,13 @@
                 </div>
                     <div class="row">
                             <div class="row mt-4 mx-auto">
-                            <img src="img/box product.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                            @if(auth()->user()->role == 'pegawai')
+                                <a href="/berandaPegawai" style="color:black;"><i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i></a>
+
+                            @else
+                                <a href="/berandaMitra" class="fa fa-arrow-left" style="color:black;" aria-hidden="true"></a>
+                            @endif
+                            <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                             <table class="table table-bordered border-dark mt-5">
                                 <thead style="background-color:#FFC13C;">
                                     <tr>

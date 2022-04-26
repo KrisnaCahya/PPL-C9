@@ -15,5 +15,13 @@ class C_Produk extends Controller
         // return view('/produk',['produk',$produk]);
     }
 
+    public function delete(Request $request, $id){
+        // dd($id);
+        $data = Products::find($id);
+        $data->delete();
+        $request->session()->flash('deleteSuccess', 'Hapus data produk telah berhasil!');
+        return redirect('/produk');
+        // return $request->id;
+    }
     
 }
