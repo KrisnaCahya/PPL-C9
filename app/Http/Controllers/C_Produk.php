@@ -19,7 +19,6 @@ class C_Produk extends Controller
         // dd($id);
         $data = Products::find($id);
         $data->delete();
-        $request->session()->flash('deleteSuccess', 'Hapus data produk telah berhasil!');
         return redirect('/produk');
         // return $request->id;
     }
