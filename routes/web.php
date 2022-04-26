@@ -60,7 +60,7 @@ Route::get('/formubahproduk/{id}', [C_ubahproduk::class, 'edit']);
 // Route untuk mengupdate data produk
 Route::post('/produk/update/{id}', [C_ubahproduk::class, 'update']);
 // Route untuk menghapus data produk
-Route::get('/produk/delete/{id}', [C_ubahproduk::class, 'delete']);
+Route::get('/produk/delete/{id}', [C_produk::class, 'delete']);
 
 
 

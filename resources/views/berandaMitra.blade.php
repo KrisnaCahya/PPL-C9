@@ -98,7 +98,7 @@
                             <form action="/logout" method="POST">
                                 <div class="col">
                                     <div class="row">
-                                        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828427.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                        <img src="img/logout" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                                     </div>
                                     <div class="row">
                                         <div class="text-center">

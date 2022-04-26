@@ -15,7 +15,7 @@
             <div class="card-body">
                 <div class="row">
                     <a href="/produk" class="fa fa-back"></a>
-                    <img src="img/tesbox.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                    <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                 </div>
             </div>
             <form action="{{ url('/produk/update', $data->id) }}" method="POST">
