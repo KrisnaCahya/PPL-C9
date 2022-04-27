@@ -64,7 +64,6 @@
                                     <td>{{ $itemTransaksi->harga_satuan}}</td>
                                     <td>{{ $itemTransaksi->total_harga}}</td>
                                     <td class="text-center">
-                                        <!-- <input type="hidden" name="id" value="{{ $itemTransaksi->id }}"> -->
                                         <a href="#" class="btn btn-danger fa fa-trash delete" data-id="{{ $itemTransaksi->id }}" data-name="{{ $itemTransaksi->nama_produk }}"></a>
                                         <a href="/formubahtransaksi/{{ $itemTransaksi->id }}" class="btn btn-warning fa fa-edit"></a>
                                     </td>
@@ -109,7 +108,7 @@
         swalWithBootstrapButtons.fire(
             'Terhapus!',
             'Data produk berhasil dihapus',
-            'success'
+            'success',
     )
   }
 })

@@ -31,7 +31,7 @@
             <div class="col-4">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
-                        <a style="text-decoration:none;color:black;" href="">
+                        <a style="text-decoration:none;color:black;" href="/transaksi">
                             <div class="col">
                                 <div class="row">
                                     <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
