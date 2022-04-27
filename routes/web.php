@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\C_Login;
 use App\Http\Controllers\C_Produk;
+use App\Http\Controllers\C_transaksi;
+use App\Http\Controllers\C_tambahtransaksi;
 use App\Http\Controllers\C_beranda;
 use App\Http\Controllers\C_Register;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_ubahproduk;
+use App\Http\Controllers\C_ubahtransaksi;
 use App\Http\Controllers\C_UbahProfil;
 use App\Http\Controllers\C_tambahproduk;
 use App\Http\Controllers\C_ProfilPegawai;
@@ -60,6 +63,20 @@ Route::post('/produk/update/{id}', [C_ubahproduk::class, 'update']);
 // Route untuk menghapus data produk
 Route::get('/produk/delete/{id}', [C_produk::class, 'delete']);
 
+// Route untuk menuju ke halaman transaksi
+Route::get('/transaksi', [C_transaksi::class, 'index']);
+
+// Route untuk menuju ke halaman transaksi
+Route::get('/formtambahtransaksi', [C_tambahtransaksi::class, 'index'])->middleware('auth');
+// Route untuk menambah data transaksi
+Route::post('/formtambahtransaksi', [C_tambahtransaksi::class, 'store'])->middleware('auth');
+
+// Route untuk menampilkan form ubah data transaksi
+Route::get('/formubahtransaksi/{id}', [C_ubahtransaksi::class, 'edit']);
+// Route untuk mengupdate data transaksi
+Route::post('/transaksi/update/{id}', [C_ubahtransaksi::class, 'update']);
+// Route untuk menghapus data transaksi
+Route::get('/transaksi/delete/{id}', [C_transaksi::class, 'delete']);
 
 
 // Route untuk menuju ke form ubah profil
