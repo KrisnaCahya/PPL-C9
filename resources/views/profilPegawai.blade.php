@@ -29,13 +29,11 @@
                                 <p>Alamat       : {{ $pegawai-> alamat }}</p>
                                 <p>No. Telepon  : {{ $pegawai-> nohp }}</p>
                                 <p>Email        : {{ $pegawai-> email }}</p>
-                                <form action="/profilPegawai/hapus" method="post">
-                                    @csrf
-                                    <div class="text-end">
-                                        <button type="submit" class="btn btn-danger mb-3" style="width: 150px;" onClick="confirm('Apakah yakin ingin menghapus data?')">Hapus Data</button>
-                                        <input type="hidden" name="id" value="{{ $pegawai-> id }}">
-                                    </div>
-                                </form>
+                                @csrf
+                                <div class="text-end">
+                                <a href="#" class="btn btn-danger fa fa-trash delete px-5 py-2 my-3" data-id="{{ $pegawai->id }}" data-name="{{ $pegawai->nama }}"></a>
+                                    <input type="hidden" name="id" value="{{ $pegawai-> id }}">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -43,5 +41,43 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    $('.delete').click(function(){
+        var pegawai_id = $(this).attr('data-id');
+        var nama_pegawai = $(this).attr('data-name');
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-warning mx-3',
+        cancelButton: 'btn btn-danger mx-3'
+    },
+        buttonsStyling: false
+})
+
+    swalWithBootstrapButtons.fire({
+        title: "Peringatan!",
+        text: "Yakin ingin menghapus data pegawai ID "+pegawai_id+" dengan nama "+nama_pegawai+"?",
+        icon: 'warning',
+        showCancelButton: true,
+        padding: '3em',
+        confirmButtonColor: '#FFC107',
+        cancelButtonColor: '#FF5252',
+        confirmButtonText: 'Iya',
+        cancelButtonText: 'Tidak',
+        reverseButtons: true
+    }).then((result) => {
+    if (result.isConfirmed) {
+        window.location = "/pegawai/delete/"+pegawai_id+""
+        swalWithBootstrapButtons.fire(
+            'Terhapus!',
+            'Data pegawai berhasil dihapus',
+            'success'
+    )
+  }
+})
+    })
+    
+</script>
 </html>

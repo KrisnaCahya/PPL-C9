@@ -64,8 +64,8 @@
                                     <td>{{ $itemTransaksi->harga_satuan}}</td>
                                     <td>{{ $itemTransaksi->total_harga}}</td>
                                     <td class="text-center">
-                                        <a href="#" class="btn btn-danger fa fa-trash delete" data-id="{{ $itemTransaksi->id }}" data-name="{{ $itemTransaksi->nama_produk }}"></a>
-                                        <a href="/formubahtransaksi/{{ $itemTransaksi->id }}" class="btn btn-warning fa fa-edit"></a>
+                                        <a href="#" class="btn btn-danger fa fa-trash delete mx-1" data-id="{{ $itemTransaksi->id }}" data-name="{{ $itemTransaksi->nama_produk }}"></a>
+                                        <a href="/formubahtransaksi/{{ $itemTransaksi->id }}" class="btn btn-warning fa fa-edit mx-1"></a>
                                     </td>
                                     </tr>
                                 </tbody>

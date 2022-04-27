@@ -62,6 +62,8 @@ Route::get('/formubahproduk/{id}', [C_ubahproduk::class, 'edit']);
 Route::post('/produk/update/{id}', [C_ubahproduk::class, 'update']);
 // Route untuk menghapus data produk
 Route::get('/produk/delete/{id}', [C_produk::class, 'delete']);
+// Route untuk menghapus data pegawai
+Route::get('/pegawai/delete/{id}', [C_ProfilPegawai::class, 'delete']);
 
 // Route untuk menuju ke halaman transaksi
 Route::get('/transaksi', [C_transaksi::class, 'index']);
@@ -88,8 +90,6 @@ Route::post('/profil/update', [C_UbahProfil::class, 'update'])->middleware('auth
 // Route menampilkan profil pegawai
 Route::get('/profilPegawai', [C_ProfilPegawai::class, 'index'])->middleware('auth');
 
-// Route untuk delete
-Route::post('/profilPegawai/hapus', [C_ProfilPegawai::class, 'hapus'])->middleware('auth');
 
 // REGISTER
 // Menampilkan halaman register

@@ -15,8 +15,10 @@ class C_ProfilPegawai extends Controller
 
 
     //method untuk menghapus data profil
-    public function hapus(Request $request){
-        User::destroy($request->id);
+    public function delete(Request $request, $id){
+        // dd($id);
+        $data = User::find($id);
+        $data->delete();
         return redirect('/profilPegawai');
         // return $request->id;
     }
