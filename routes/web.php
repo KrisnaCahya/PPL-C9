@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\C_Login;
 use App\Http\Controllers\C_Produk;
+use App\Http\Controllers\C_beranda;
 use App\Http\Controllers\C_Register;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_ubahproduk;
@@ -24,14 +25,6 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/berandaMitra', function () {
-    return view('berandaMitra');
-});
-
-Route::get('/berandaPegawai', function () {
-    return view('berandaPegawai');
-});
-
 Route::get('/profil', function () {
     return view('profil');
 });
@@ -46,6 +39,11 @@ Route::get('/tes', function () {
 //     return view('formubahproduk');
 // });
 
+
+// Route untuk menuju ke halaman beranda mitra
+Route::get('/berandaMitra', [C_beranda::class, 'index'])->middleware('auth');
+// Route untuk menuju ke halaman pegawai
+Route::get('/berandaPegawai', [C_beranda::class, 'index'])->middleware('auth');
 
 // Route untuk menuju ke halaman produk
 Route::get('/produk', [C_Produk::class, 'index']);

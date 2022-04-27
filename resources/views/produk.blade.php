@@ -55,8 +55,11 @@
                                 </thead>
                                 @foreach ($product as $produk)
                                 <tbody>
+                                    <?php
+                                     $no=1;
+                                    ?>
                                     <tr>
-                                    <td>{{ $produk->id}}</td>
+                                    <td>{{ $no++ }}</td>
                                     <td>{{ $produk->nama_produk}}</td>
                                     <td>{{ $produk->satuan}}</td>
                                     <td>{{ $produk->tanggal}}</td>
@@ -94,6 +97,7 @@
 })
 
     swalWithBootstrapButtons.fire({
+        title: "Peringatan!",
         text: "Yakin ingin menghapus data produk ID "+produk_id+" dengan nama "+nama_produk+"?",
         icon: 'warning',
         showCancelButton: true,
