@@ -12,7 +12,6 @@
 
   <body style="background-color:#DEF7E5;">
     <div class="container my-5 p-3">
-        <!-- <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 80px;height: 55px;" class="mx-auto mt-3 mb-5"> -->
         <div class="card container-fluid mt-4" style="margin-top: 80px;margin-left: 10px;">
             <div class="card-body">
                 <div class="text-center">
