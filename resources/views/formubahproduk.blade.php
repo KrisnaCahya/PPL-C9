@@ -11,7 +11,7 @@
 
 <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-4">
-        <div class="card container-fluid text-center mx-auto" style="margin-top: 80px;">
+        <div class="card container-fluid text-center mx-auto tes" style="margin-top: 80px;">
             <div class="card-body">
                 <div class="row">
                     <a href="/produk" class="fa fa-back"></a>
