@@ -81,7 +81,6 @@
                 <div class="col-4">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
-                            <!-- <a style="text-decoration:none;color:black;" href="/login"> -->
                             <form action="/logout" method="POST">
                                 <div class="col">
                                     <div class="row">
@@ -95,7 +94,6 @@
                                     </div>  
                                 </div>
                             </form>
-                            <!-- </a>     -->
                         </div>  
                     </div>
                 </div>
