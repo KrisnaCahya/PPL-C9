@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="text-right">
-                        <input class="btn btn-warning mx-auto col-sm-4 mb-5 mt-3" type="submit" name="Daftar" value="Daftar">
+                        <input class="btn btn-warning mx-auto col-sm-4 mb-3 mt-3" type="submit" name="Daftar" value="Daftar">
                         <p>Sudah punya akun? <a href="login">Login</a>.</p>   
                     </div>
                 </form>

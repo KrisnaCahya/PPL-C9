@@ -10,9 +10,9 @@
 </head>
 
 <body style="background-color:#DEF7E5;">
-    <div class="container my-5 p-5" style="background-color:#89C791;">
+    <div class="container my-5 p-5 beranda" style="background-color:#89C791;">
         <div class="row justify-content-start my-5">
-            <div class="col-4">
+            <div class="col-xl-4 col-md-3 col-sm-2">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
                         <a style="text-decoration:none;color:black;" href="/profil">
@@ -28,7 +28,7 @@
                     </div>     
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-xl-4 col-md-3 col-sm-2">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
                     <a style="text-decoration:none;color:black;" href="/profilPegawai">
@@ -44,7 +44,7 @@
                     </div>  
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-xl-4 col-md-3 col-sm-2">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
                     <a style="text-decoration:none;color:black;" href="/transaksi">
@@ -63,7 +63,7 @@
             </div>
             
             <div class="row justify-content-start mt-5 mb-5">
-                <div class="col-4">
+                <div class="col-xl-4 col-md-3 col-sm-2">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
                             <div class="col">
@@ -77,7 +77,7 @@
                         </div>  
                     </div>
                 </div>
-                <div class="col-4">
+                <div class="col-xl-4 col-md-3 col-sm-2">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
                     <a style="text-decoration:none;color:black;" href="/produk">
@@ -93,7 +93,7 @@
                     </div>  
                 </div>
             </div>
-                <div class="col-4">
+                <div class="col-xl-4 col-md-3 col-sm-2">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
                             <a style="text-decoration:none;color:black;" href="/login">

@@ -10,7 +10,7 @@
 </head>
 
 <body style="background-color:#DEF7E5;">
-    <div class="container my-5 p-5" style="background-color:#89C791;">
+    <div class="container my-5 p-5 beranda" style="background-color:#89C791;">
         <div class="row justify-content-start my-5">
             <div class="col-4">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
