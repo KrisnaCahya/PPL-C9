@@ -8,7 +8,6 @@
 
 .card.container-fluid.text-center.mx-auto{
     border-radius: 20px;
-    position: relative;
 }
 
 .alert.alert-success.alert-dismissible.fade.show.mt-4{
@@ -70,4 +69,8 @@
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+.tes{
+    border-radius: 20px;
 }
