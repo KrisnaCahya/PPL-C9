@@ -11,11 +11,11 @@
 
 <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-4">
-        <div class="card container-fluid text-center mx-auto" style="margin-top: 80px;">
+        <div class="card container-fluid text-center mx-auto" style="margin-top: 80px; border-radius: 25px;">
             <div class="card-body">
                 <div class="row">
                     <a href="/produk" class="fa fa-back"></a>
-                    <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                    <img src="https://cdn.discordapp.com/attachments/811787365630738502/969106680434536478/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                 </div>
             </div>
             <form action="{{ url('/produk/update', $data->id) }}" method="POST">
