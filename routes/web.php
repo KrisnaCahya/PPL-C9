@@ -2,16 +2,18 @@
 
 use App\Http\Controllers\C_Login;
 use App\Http\Controllers\C_Produk;
-use App\Http\Controllers\C_transaksi;
-use App\Http\Controllers\C_tambahtransaksi;
 use App\Http\Controllers\C_beranda;
 use App\Http\Controllers\C_Register;
+use App\Http\Controllers\C_dashboard;
+use App\Http\Controllers\C_transaksi;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\C_ubahproduk;
-use App\Http\Controllers\C_ubahtransaksi;
 use App\Http\Controllers\C_UbahProfil;
 use App\Http\Controllers\C_tambahproduk;
 use App\Http\Controllers\C_ProfilPegawai;
+use App\Http\Controllers\C_ubahtransaksi;
+use App\Http\Controllers\C_tambahtransaksi;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +26,6 @@ use App\Http\Controllers\C_ProfilPegawai;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
 
 Route::get('/profil', function () {
     return view('profil');
@@ -35,13 +34,13 @@ Route::get('/profil', function () {
 Route::get('/profilPegawai', function () {
     return view('profilPegawai');
 });
-Route::get('/tes', function () {
-    return view('tes');
-});
+
 // Route::get('/formubahproduk', function () {
 //     return view('formubahproduk');
 // });
 
+// Route untuk menuju ke halaman dashboard
+Route::get('/dashboard', [C_dashboard::class, 'index'])->middleware('guest');
 
 // Route untuk menuju ke halaman beranda mitra
 Route::get('/berandaMitra', [C_beranda::class, 'index'])->middleware('auth');
