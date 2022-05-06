@@ -12,25 +12,25 @@
 <body style="background-color:#DEF7E5;">
     <div class="container my-5 py-5 col-xl-5">
         <!-- mengecek apakah didalam session terdapat key success -->
-        <div class="card container-fluid text-center mx-auto" style="margin-top: 40px;">
-            <div class="card-body">
-            <div class="text-center">
-                @if(session()->has('success'))
-                <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-                    <!-- mencetak flash message dengan key success -->
-                    {{ session('success') }}
+        <div class="text-center">
+            @if(session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
+                <!-- mencetak flash message dengan key success -->
+                {{ session('success') }}
+                <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+            <!-- mengecek apakah didalam session terdapat key success -->
+            @if(session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                    <!-- mencetak flash message dengan key loginError -->
+                    {{ session('loginError') }}
                     <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                @endif
-                <!-- mengecek apakah didalam session terdapat key success -->
-                @if(session()->has('loginError'))
-                    <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
-                        <!-- mencetak flash message dengan key loginError -->
-                        {{ session('loginError') }}
-                        <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                @endif
-            </div>
+            @endif
+        </div>
+        <div class="card container-fluid text-center mx-auto" style="margin-top: 40px;">
+            <div class="card-body">
             <div class="row">
                 <h1 class="col mx-0 mb-5 mt-3"style="color:#06DA3E;">KRIPSKUY</h1>
             </div>
