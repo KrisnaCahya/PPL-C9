@@ -23,8 +23,9 @@ class C_ubahproduk extends Controller
             'tanggal' => ['required'],
             'jumlah_produk_masuk' => ['required'],
             'jumlah_produk_keluar' => ['required'],
-            'jumlah_sisa_produk' => ['required'],
+            'jumlah_sisa_produk' => [''],
         ]);
+        $validatedData["jumlah_sisa_produk"] = $validatedData["jumlah_produk_masuk"]-$validatedData["jumlah_produk_keluar"];
         $data->update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data produk telah berhasil!');
         return redirect('/produk'); 

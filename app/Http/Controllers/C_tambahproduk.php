@@ -23,9 +23,10 @@ class C_tambahproduk extends Controller
             'tanggal' => ['required','date'],
             'jumlah_produk_masuk' => ['required','integer'],
             'jumlah_produk_keluar' => ['required','integer'],
-            'jumlah_sisa_produk' => ['required','integer'],
+            'jumlah_sisa_produk' => [''],
         ]);
         
+        $validatedData["jumlah_sisa_produk"] = $validatedData["jumlah_produk_masuk"]-$validatedData["jumlah_produk_keluar"];
         Products::create($validatedData);
         $request->session()->flash('successAddProduct','Data produk berhasil ditambahkan!');
         return redirect('/produk');

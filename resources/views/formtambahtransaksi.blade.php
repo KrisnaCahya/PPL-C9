@@ -63,17 +63,6 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="total_harga" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control @error('total_harga') is-invalid @enderror" id="total_harga" name = "total_harga" placeholder= "Masukkan total harga">
-                            @error('total_harga')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
                     <div class="text-right">
                         <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'transaksi';" name="Batal" value="Batal" >
                         <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">

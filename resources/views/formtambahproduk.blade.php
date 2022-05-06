@@ -74,17 +74,7 @@
                             @enderror
                         </div>
                     </div>
-                    <div class="row mb-3">
-                        <label for="jumlah_sisa_produk" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control @error('jumlah_sisa_produk') is-invalid @enderror" id="jumlah_sisa_produk" name = "jumlah_sisa_produk" placeholder= "Masukkan jumlah sisa produk">
-                            @error('jumlah_sisa_produk')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
-                        </div>
-                    </div>
+                    
                     <div class="text-right">
                         <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'produk';" name="Batal" value="Batal" >
                         <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">

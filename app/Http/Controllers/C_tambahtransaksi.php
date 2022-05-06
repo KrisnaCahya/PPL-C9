@@ -22,9 +22,10 @@ class C_tambahtransaksi extends Controller
             'nama_produk' => ['required',],
             'jumlah_produk' => ['required'],
             'harga_satuan' => ['required'],
-            'total_harga' => ['required'],
+            'total_harga' => [''],
         ]);
         
+        $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
         Transaksi::create($validatedData);
         $request->session()->flash('successAddTransaction','Data transaksi berhasil ditambahkan!');
         return redirect('/transaksi');
