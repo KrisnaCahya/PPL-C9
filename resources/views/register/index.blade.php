@@ -11,15 +11,6 @@
 
 <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-5">
-        <div class="text-center">
-            @if(session()->has('failedConfirmPass'))
-            <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
-                <!-- mencetak flash message dengan key success -->
-                {{ session('failedConfirmPass') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
-        </div>
         <div class="card container-fluid text-center mx-auto" style="margin-top: 50px;">
             <div class="card-body">
                 <div class="row">

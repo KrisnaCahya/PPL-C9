@@ -13,13 +13,6 @@
     <div class="container my-5 py-5 col-xl-5">
         <!-- mengecek apakah didalam session terdapat key success -->
         <div class="text-center">
-            @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-                <!-- mencetak flash message dengan key success -->
-                {{ session('success') }}
-                <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
             <!-- mengecek apakah didalam session terdapat key success -->
             @if(session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
@@ -41,7 +34,7 @@
                     <div class="row mb-3">
                         <label for="username" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input class="form-control @error('username') is-invalid @enderror" type="text" id="username" name="username" placeholder="Masukkan username" value="{{ old('username') }}" required>
+                            <input class="form-control @error('username') is-invalid @enderror" type="text" id="username" name="username" placeholder="Masukkan username" value="{{ old('username') }}">
                         </div>
                         @error('username')
                         <div class="invalid-feedback">
@@ -52,7 +45,7 @@
                     <div class="row mb-3">
                         <label for="password" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input class="form-control" type="password" id="password" name="password" placeholder="Masukkan Password" required>
+                            <input class="form-control" type="password" id="password" name="password" placeholder="Masukkan Password">
                         </div>
                     </div>
                     <div class="text-center my-2 mb-5">

@@ -15,22 +15,6 @@
         <!-- <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 80px;height: 55px;" class="mx-auto mt-3 mb-5"> -->
         <div class="card container-fluid mt-4" style="margin-top: 80px;margin-left: 10px;">
             <div class="card-body">
-                <div class="text-center">
-                    @if(session()->has('successAddProduct'))
-                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="width:1225px">
-                        <!-- mencetak flash message dengan key success -->
-                        {{ session('successAddProduct') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    @endif
-                    @if(session()->has('updateSuccess'))
-                    <div class="alert alert-success alert-dismissible fade show mt-4" role="alert" style="width:1225px">
-                        <!-- mencetak flash message dengan key success -->
-                        {{ session('updateSuccess') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-                    @endif
-                </div>
                     <div class="row">
                             <div class="row mt-4 mx-auto">
                             @if(auth()->user()->role == 'pegawai')
@@ -78,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/formtambahproduk">Tambah Data Produk</a> 
+                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/formtambahproduk">Tambah</a> 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>

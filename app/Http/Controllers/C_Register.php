@@ -21,12 +21,12 @@ class C_Register extends Controller
     public function store(Request $request) {
         // Validasi data dengan syarat tertentu
         $validatedData = $request -> validate([
-            'username' => ['required','min:5','max:15','unique:users'],
-            'nama' => ['required','min:5'],
-            'nohp' => ['required','min:5','max:15','unique:users'],
-            'email' => ['required','email','unique:users'],
-            'alamat' => ['required','min:5','max:200'],
-            'password' => ['required','min:5','max:100'],
+            'username' => ['required','unique:users'],
+            'nama' => ['required'],
+            'nohp' => ['required','unique:users'],
+            'email' => ['required','unique:users'],
+            'alamat' => ['required'],
+            'password' => ['required'],
         ]);
         $confirmPass = $request->validate(['repassword' => ['required','min:5','max:100']]);
 

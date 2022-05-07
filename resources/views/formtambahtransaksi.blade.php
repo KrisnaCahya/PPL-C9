@@ -11,10 +11,10 @@
 
 <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-4">
-        <div class="card container-fluid text-center mx-auto" style="margin-top: 80px;">
+        <div class="card container-fluid text-center mx-auto" style="margin-top: 120px;">
             <div class="card-body">
                 <div class="row">
-                <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-4">
                 </div>
             </div>
             <form action="/formtambahtransaksi" method="POST">

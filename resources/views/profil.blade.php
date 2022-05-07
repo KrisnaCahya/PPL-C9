@@ -12,15 +12,6 @@
 
   <body style="background-color:#DEF7E5;">
     <div class="container my-5 col-xl-5">
-      <div class="text-center">
-        @if(session()->has('updateSuccess'))
-        <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
-            <!-- mencetak flash message dengan key updateSuccess -->
-            {{ session('updateSuccess') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif
-        </div>
         <div class="card container-fluid mx-auto" style="margin-top: 30px;margin-left: 10px;">
         @if(auth()->user()->role == 'pegawai')
           <a href="/berandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x mt-3" aria-hidden="true"></i></a>

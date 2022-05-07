@@ -67,7 +67,7 @@
               <div class="row">
                   <div class="text-center">
                       <input class="btn btn-danger mx-5 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'profil';" name="Batal" value="Batal" >
-                      <input class="btn btn-success mx-5 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan" onClick="confirm('Apakah yakin ingin mengubah data?')">  
+                      <input class="btn btn-success mx-5 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">  
                       <input type="hidden" name="id" value="{{ $user->id }}">
                     </div>
                 </div>
