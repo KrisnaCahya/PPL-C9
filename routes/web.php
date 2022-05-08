@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\C_Login;
-use App\Http\Controllers\C_Produk;
+use App\Http\Controllers\C_produk;
+use App\Http\Controllers\C_Profil;
 use App\Http\Controllers\C_beranda;
 use App\Http\Controllers\C_Register;
 use App\Http\Controllers\C_dashboard;
@@ -27,9 +28,9 @@ use App\Http\Controllers\C_tambahtransaksi;
 */
 
 
-Route::get('/profil', function () {
-    return view('profil');
-});
+// Route::get('/profil', function () {
+//     return view('profil');
+// });
 
 Route::get('/profilPegawai', function () {
     return view('profilPegawai');
@@ -38,9 +39,10 @@ Route::get('/profilPegawai', function () {
 // Route::get('/formubahproduk', function () {
 //     return view('formubahproduk');
 // });
+Route::get('/profil', [C_Profil::class, 'Profil'])->middleware('auth');
 
 // Route untuk menuju ke halaman dashboard
-Route::get('/dashboard', [C_dashboard::class, 'index'])->middleware('guest');
+Route::get('/V_Dashboard', [C_dashboard::class, 'index'])->middleware('guest');
 
 // Route untuk menuju ke halaman beranda mitra
 Route::get('/berandaMitra', [C_beranda::class, 'index'])->middleware('auth');
@@ -62,7 +64,7 @@ Route::post('/produk/update/{id}', [C_ubahproduk::class, 'update'])->middleware(
 // Route untuk menghapus data produk
 Route::get('/produk/delete/{id}', [C_produk::class, 'delete'])->middleware('auth');
 // Route untuk menghapus data pegawai
-Route::get('/pegawai/delete/{id}', [C_ProfilPegawai::class, 'delete'])->middleware('auth');
+Route::get('/pegawai/delete/{id}', [C_ProfilPegawai::class, 'hapus'])->middleware('auth');
 
 // Route untuk menuju ke halaman transaksi
 Route::get('/transaksi', [C_transaksi::class, 'index']);
@@ -81,21 +83,21 @@ Route::get('/transaksi/delete/{id}', [C_transaksi::class, 'delete'])->middleware
 
 
 // Route untuk menuju ke form ubah profil
-Route::get('/ubahProfil', [C_UbahProfil::class, 'edit'])->middleware('auth');
+Route::get('/ubahProfil', [C_UbahProfil::class, 'SetFormUbahProfil'])->middleware('auth');
 // Route untuk update data profil
 Route::post('/profil/update', [C_UbahProfil::class, 'update'])->middleware('auth');
 
 
 // Route menampilkan profil pegawai
-Route::get('/profilPegawai', [C_ProfilPegawai::class, 'index'])->middleware('auth');
+Route::get('/profilPegawai', [C_ProfilPegawai::class, 'ProfilPegawai'])->middleware('auth');
 
 
 // REGISTER
 // Menampilkan halaman register
-Route::get('/register', [C_Register::class, 'index'])->middleware('guest');
+Route::get('/register', [C_Register::class, 'Register'])->middleware('guest');
 
 // Route untuk create akun baru
-Route::post('/register', [C_Register::class, 'store'])->middleware('guest');
+Route::post('/register', [C_Register::class, 'Create'])->middleware('guest');
 
 // LOGIN
 // Menampilkan view form login

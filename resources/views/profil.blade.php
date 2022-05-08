@@ -26,24 +26,24 @@
         <form method="get" action="/profilMitra" class="mx-auto" >
               <label class="form-label mx-3 text-center">Nama</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control mx-3 mb-3" name="nama" style="width: 560px;" value="{{ old('nama', Auth::user()->nama) }}"/>
+                <input type="text" class="form-control mx-3 mb-3" name="nama" style="width: 560px;" value="{{ $data->nama }}"/>
               </div>
           <div class="form-group">
             <label class="form-label mx-3">Email</label>
             <div class="col-sm-8">
-              <input type="email" class="form-control mx-3 mb-3" name="email" style="width: 560px;" value="{{ old('email', Auth::user()->email) }}"/>
+              <input type="email" class="form-control mx-3 mb-3" name="email" style="width: 560px;" value="{{ $data->email }}"/>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label mx-3">No.Telepon</label>
             <div class="col-sm-8">
-              <input type="number" class="form-control mx-3 mb-3" name="nohp" style="width: 560px;" value="{{ old('nohp', Auth::user()->nohp) }}"/>
+              <input type="number" class="form-control mx-3 mb-3" name="nohp" style="width: 560px;" value="{{ $data->nohp }}"/>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label mx-3">Alamat</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control mx-3 mb-3" name="alamat" style="width: 560px;" value="{{ old('alamat', Auth::user()->alamat) }}"></textarea>
+              <input type="text" class="form-control mx-3 mb-3" name="alamat" style="width: 560px;" value="{{ $data->alamat }}"></textarea>
             </div>
           </div>
           <div class="form-group">

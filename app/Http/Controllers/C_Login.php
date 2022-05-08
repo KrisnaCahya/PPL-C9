@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class C_Login extends Controller
 {
     // Method untuk menampilkan halaman login
-    public function index(){
+    public function login(){
         return view('login.index',[
             "active" => "login",
             "title" => "login"

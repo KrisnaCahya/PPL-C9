@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 class C_beranda extends Controller
 {
+    // Menampilkan beranda sesuai role
     public function index(){
         if (auth()->user()->role == 'pegawai'){
             return view('berandaPegawai',[

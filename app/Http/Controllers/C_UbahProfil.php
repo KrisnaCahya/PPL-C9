@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class C_UbahProfil extends Controller
 {
-    public function edit(){
+    public function UbahProfil(){
         return view('/ubahProfil')->with('user', auth()->user());
     }
 

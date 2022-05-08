@@ -14,6 +14,13 @@
         <!-- mengecek apakah didalam session terdapat key success -->
         <div class="text-center">
             <!-- mengecek apakah didalam session terdapat key success -->
+            @if(session()->has('success'))
+                <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                    <!-- mencetak flash message dengan key success -->
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             @if(session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
                     <!-- mencetak flash message dengan key loginError -->

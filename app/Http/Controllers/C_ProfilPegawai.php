@@ -8,14 +8,14 @@ use App\Models\User;
 class C_ProfilPegawai extends Controller
 {
     // Method untuk mengambil data user
-    public function index(){
+    public function ProfilPegawai(){
         $data = User::where('role', 'pegawai')->get();
         return view('/profilPegawai',['data'=>$data]);
     }
 
 
     //method untuk menghapus data profil
-    public function delete(Request $request, $id){
+    public function hapus(Request $request, $id){
         // dd($id);
         $data = User::find($id);
         $data->delete();
