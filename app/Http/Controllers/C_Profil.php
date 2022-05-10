@@ -10,7 +10,7 @@ class C_Profil extends Controller
 {
     public function Profil(){
         $profil=Auth::user();
-        return view('profil',[
+        return view('V_Profil',[
             "active" => "profil",
             "title" => "profil",
             "data" => $profil,

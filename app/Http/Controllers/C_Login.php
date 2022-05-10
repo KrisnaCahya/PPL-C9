@@ -10,7 +10,7 @@ class C_Login extends Controller
 {
     // Method untuk menampilkan halaman login
     public function login(){
-        return view('login.index',[
+        return view('V_Login',[
             "active" => "login",
             "title" => "login"
         ]);
@@ -30,9 +30,9 @@ class C_Login extends Controller
             $request -> session() -> regenerate();
             // Beralih ke halaman beranda
             if(Auth::user()->role == 'pegawai'){
-                return redirect() -> intended('/berandaPegawai');
+                return redirect() -> intended('/V_BerandaPegawai');
             } else{
-                return redirect() -> intended('/berandaMitra');
+                return redirect() -> intended('/V_BerandaMitra');
             }
         }
         
@@ -49,7 +49,7 @@ class C_Login extends Controller
         // regenerate untuk menghindari session fixation (masuk ke dalam keamanan menggunakan session yang sama)
         $request->session()->regenerateToken();
         // beralih ke halaman login
-        return redirect('/login');
+        return redirect('/V_Login');
     }
     //
 }

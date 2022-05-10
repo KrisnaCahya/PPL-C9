@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class C_UbahProfil extends Controller
 {
     public function UbahProfil(){
-        return view('/ubahProfil')->with('user', auth()->user());
+        return view('/V_FormUbahProfil')->with('user', auth()->user());
     }
 
     public function update(Request $request){
@@ -24,7 +24,7 @@ class C_UbahProfil extends Controller
         
         User::where('id',$request->id) -> update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
-        return redirect('/profil');
+        return redirect('/V_Profil');
 
     }
 }

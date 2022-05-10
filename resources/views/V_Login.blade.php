@@ -15,17 +15,17 @@
         <div class="text-center">
             <!-- mengecek apakah didalam session terdapat key success -->
             @if(session()->has('success'))
-                <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
+                <div class="alert alert-success alert-dismissible fade show mt-4" role="alert">
                     <!-- mencetak flash message dengan key success -->
                     {{ session('success') }}
-                    <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" onclick="window.location.href = 'V_Login';" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
             @if(session()->has('loginError'))
                 <div class="alert alert-danger alert-dismissible fade show mt-4" role="alert">
                     <!-- mencetak flash message dengan key loginError -->
                     {{ session('loginError') }}
-                    <button type="button" class="btn-close" onclick="window.location.href = 'login';" data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" onclick="window.location.href = 'V_Login';" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
         </div>
@@ -35,7 +35,7 @@
                 <h1 class="col mx-0 mb-5 mt-3"style="color:#06DA3E;">KRIPSKUY</h1>
             </div>
             </div>
-                <form action="/login" method="post">
+                <form action="/V_Login" method="post">
                     <!-- men-generate token agar web terhindar dari intruder -->
                     @csrf
                     <div class="row mb-3">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="text-center my-2 mb-5">
                         <input class="btn btn-warning mx-auto col-sm-5 mb-3 mt-5" type="submit" name="Submit" value="Login">
-                        <p>Tidak punya akun? <a href="/register">Daftar</a></p>
+                        <p>Tidak punya akun? <a href="/V_Register">Daftar</a></p>
                     </div>
                 </form>
             </div>

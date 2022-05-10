@@ -17,7 +17,7 @@
                     <h1 class="col mx-0 my-5"style="color:#06DA3E;">KRIPSKUY</h1>
                 </div>
             </div>
-            <form action="/register" method="POST">
+            <form action="/V_Register" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <label for="username" class="col-sm-2 col-form-label"></label>

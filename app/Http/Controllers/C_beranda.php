@@ -11,12 +11,12 @@ class C_beranda extends Controller
     // Menampilkan beranda sesuai role
     public function index(){
         if (auth()->user()->role == 'pegawai'){
-            return view('berandaPegawai',[
+            return view('V_BerandaPegawai',[
                 "active" => "login",
                 "title" => "login"
             ]);
         } else{
-            return view('berandaMitra',[
+            return view('V_BerandaMitra',[
                 "active" => "login",
                 "title" => "login"
             ]);

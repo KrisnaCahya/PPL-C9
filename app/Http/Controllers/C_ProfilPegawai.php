@@ -10,7 +10,7 @@ class C_ProfilPegawai extends Controller
     // Method untuk mengambil data user
     public function ProfilPegawai(){
         $data = User::where('role', 'pegawai')->get();
-        return view('/profilPegawai',['data'=>$data]);
+        return view('/V_ProfilPegawai',['data'=>$data]);
     }
 
 
@@ -19,7 +19,7 @@ class C_ProfilPegawai extends Controller
         // dd($id);
         $data = User::find($id);
         $data->delete();
-        return redirect('/profilPegawai');
+        return redirect('/V_ProfilPegawai');
         // return $request->id;
     }
     //

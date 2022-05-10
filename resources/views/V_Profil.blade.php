@@ -14,9 +14,9 @@
     <div class="container my-5 col-xl-5">
         <div class="card container-fluid mx-auto" style="margin-top: 30px;margin-left: 10px;">
         @if(auth()->user()->role == 'pegawai')
-          <a href="/berandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x mt-3" aria-hidden="true"></i></a>
+          <a href="/V_BerandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x mt-3" aria-hidden="true"></i></a>
         @else
-          <a href="/berandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x mt-3" aria-hidden="true"></i></a>
+          <a href="/V_BerandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x mt-3" aria-hidden="true"></i></a>
         @endif  
         <div class="card-body">
             <div class="row">
@@ -48,7 +48,7 @@
           </div>
           <div class="form-group">
             <div class="text-center">
-              <a class="btn btn-warning mb-5 mt-4" href="/ubahProfil">Ubah Data</a> 
+              <a class="btn btn-warning mb-5 mt-4" href="/V_FormUbahProfil">Ubah Data</a> 
             </div>
           </div>
         </form>

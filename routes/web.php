@@ -39,15 +39,15 @@ Route::get('/profilPegawai', function () {
 // Route::get('/formubahproduk', function () {
 //     return view('formubahproduk');
 // });
-Route::get('/profil', [C_Profil::class, 'Profil'])->middleware('auth');
+Route::get('/V_Profil', [C_Profil::class, 'Profil'])->middleware('auth');
 
 // Route untuk menuju ke halaman dashboard
 Route::get('/V_Dashboard', [C_dashboard::class, 'index'])->middleware('guest');
 
 // Route untuk menuju ke halaman beranda mitra
-Route::get('/berandaMitra', [C_beranda::class, 'index'])->middleware('auth');
+Route::get('/V_BerandaMitra', [C_beranda::class, 'index'])->middleware('auth');
 // Route untuk menuju ke halaman pegawai
-Route::get('/berandaPegawai', [C_beranda::class, 'index'])->middleware('auth');
+Route::get('/V_BerandaPegawai', [C_beranda::class, 'index'])->middleware('auth');
 
 // Route untuk menuju ke halaman produk
 Route::get('/produk', [C_Produk::class, 'index'])->middleware('auth');
@@ -83,28 +83,28 @@ Route::get('/transaksi/delete/{id}', [C_transaksi::class, 'delete'])->middleware
 
 
 // Route untuk menuju ke form ubah profil
-Route::get('/ubahProfil', [C_UbahProfil::class, 'SetFormUbahProfil'])->middleware('auth');
+Route::get('/V_FormUbahProfil', [C_UbahProfil::class, 'UbahProfil'])->middleware('auth');
 // Route untuk update data profil
 Route::post('/profil/update', [C_UbahProfil::class, 'update'])->middleware('auth');
 
 
 // Route menampilkan profil pegawai
-Route::get('/profilPegawai', [C_ProfilPegawai::class, 'ProfilPegawai'])->middleware('auth');
+Route::get('/V_ProfilPegawai', [C_ProfilPegawai::class, 'ProfilPegawai'])->middleware('auth');
 
 
 // REGISTER
 // Menampilkan halaman register
-Route::get('/register', [C_Register::class, 'Register'])->middleware('guest');
+Route::get('/V_Register', [C_Register::class, 'Register'])->middleware('guest');
 
 // Route untuk create akun baru
-Route::post('/register', [C_Register::class, 'Create'])->middleware('guest');
+Route::post('/V_Register', [C_Register::class, 'Create'])->middleware('guest');
 
 // LOGIN
 // Menampilkan view form login
-Route::get('/login', [C_Login::class, 'index'])->name('login')->middleware('guest');
+Route::get('/V_Login', [C_Login::class, 'login'])->name('login')->middleware('guest');
 
 // Mengotentikasi data request dengan database untuk login
-Route::post('/login', [C_Login::class, 'authenticate'])->middleware('guest');
+Route::post('/V_Login', [C_Login::class, 'authenticate'])->middleware('guest');
 
 // Route untuk logout
 Route::post('/logout', [C_Login::class, 'logout'])->middleware('auth');

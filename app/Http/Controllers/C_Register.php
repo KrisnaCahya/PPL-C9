@@ -11,7 +11,7 @@ class C_Register extends Controller
     
     public function Register() 
     {
-        return view('register.index',[
+        return view('V_Register',[
             'title' => 'Daftar',
             'active' => 'Daftar'
         ]);
@@ -38,7 +38,7 @@ class C_Register extends Controller
             // Menampilkan pesan flash bahwa akun berhasil dibuat
             $request->session()->flash('success','Akun berhasil dibuat! Silahkan login');
             // Mengalihkan ke halaman login
-            return redirect('/login');
+            return redirect('/V_Login');
         
     }
 }
