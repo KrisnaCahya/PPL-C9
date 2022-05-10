@@ -6,12 +6,12 @@ use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class C_ubahproduk extends Controller
+class C_UbahProduk extends Controller
 {
-    public function edit($id){
+    public function ubah($id){
         $data = Products::find($id);
         // dd($data);
-        return view('formubahproduk', compact('data'));
+        return view('V_FormUbahProduk', compact('data'));
     }
     
     public function update(Request $request, $id){

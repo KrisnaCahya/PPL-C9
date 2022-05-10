@@ -65,7 +65,7 @@
                 <div class="col-4">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
-                        <a style="text-decoration:none;color:black;" href="/produk">
+                        <a style="text-decoration:none;color:black;" href="/V_Produk">
                             <div class="col">
                                 <div class="row">
                                     <img src="https://cdn-icons-png.flaticon.com/512/1524/1524539.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">

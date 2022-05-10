@@ -6,11 +6,11 @@ use App\Http\Controllers\C_Profil;
 use App\Http\Controllers\C_beranda;
 use App\Http\Controllers\C_Register;
 use App\Http\Controllers\C_dashboard;
-use App\Http\Controllers\C_transaksi;
+use App\Http\Controllers\C_Transaksi;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\C_ubahproduk;
+use App\Http\Controllers\C_UbahProduk;
 use App\Http\Controllers\C_UbahProfil;
-use App\Http\Controllers\C_tambahproduk;
+use App\Http\Controllers\C_TambahProduk;
 use App\Http\Controllers\C_ProfilPegawai;
 use App\Http\Controllers\C_ubahtransaksi;
 use App\Http\Controllers\C_tambahtransaksi;
@@ -39,6 +39,7 @@ Route::get('/profilPegawai', function () {
 // Route::get('/formubahproduk', function () {
 //     return view('formubahproduk');
 // });
+
 Route::get('/V_Profil', [C_Profil::class, 'Profil'])->middleware('auth');
 
 // Route untuk menuju ke halaman dashboard
@@ -50,36 +51,36 @@ Route::get('/V_BerandaMitra', [C_beranda::class, 'index'])->middleware('auth');
 Route::get('/V_BerandaPegawai', [C_beranda::class, 'index'])->middleware('auth');
 
 // Route untuk menuju ke halaman produk
-Route::get('/produk', [C_Produk::class, 'index'])->middleware('auth');
+Route::get('/V_Produk', [C_Produk::class, 'produk'])->middleware('auth');
 
 // Route untuk menuju ke halaman produk
-Route::get('/formtambahproduk', [C_tambahproduk::class, 'index'])->middleware('auth');
+Route::get('/V_FormTambahProduk', [C_TambahProduk::class, 'tambah'])->middleware('auth');
 // Route untuk menambah data produk
-Route::post('/formtambahproduk', [C_tambahproduk::class, 'store'])->middleware('auth');
+Route::post('/V_FormTambahProduk', [C_TambahProduk::class, 'store'])->middleware('auth');
 
 // Route untuk menampilkan form ubah data produk
-Route::get('/formubahproduk/{id}', [C_ubahproduk::class, 'edit'])->middleware('auth');
+Route::get('/formubahproduk/{id}', [C_UbahProduk::class, 'edit'])->middleware('auth');
 // Route untuk mengupdate data produk
-Route::post('/produk/update/{id}', [C_ubahproduk::class, 'update'])->middleware('auth');
+Route::post('/produk/update/{id}', [C_UbahProduk::class, 'update'])->middleware('auth');
 // Route untuk menghapus data produk
-Route::get('/produk/delete/{id}', [C_produk::class, 'delete'])->middleware('auth');
+Route::get('/produk/delete/{id}', [C_produk::class, 'hapus'])->middleware('auth');
 // Route untuk menghapus data pegawai
 Route::get('/pegawai/delete/{id}', [C_ProfilPegawai::class, 'hapus'])->middleware('auth');
 
 // Route untuk menuju ke halaman transaksi
-Route::get('/transaksi', [C_transaksi::class, 'index']);
+Route::get('/V_Transaksi', [C_Transaksi::class, 'transaksi'])->middleware('auth');
 
 // Route untuk menuju ke halaman transaksi
-Route::get('/formtambahtransaksi', [C_tambahtransaksi::class, 'index'])->middleware('auth');
+Route::get('/V_FormTambahTransaksi', [C_tambahtransaksi::class, 'tambah'])->middleware('auth');
 // Route untuk menambah data transaksi
-Route::post('/formtambahtransaksi', [C_tambahtransaksi::class, 'store'])->middleware('auth');
+Route::post('/V_FormTambahTransaksi', [C_tambahtransaksi::class, 'create'])->middleware('auth');
 
 // Route untuk menampilkan form ubah data transaksi
 Route::get('/formubahtransaksi/{id}', [C_ubahtransaksi::class, 'edit'])->middleware('auth');
 // Route untuk mengupdate data transaksi
 Route::post('/transaksi/update/{id}', [C_ubahtransaksi::class, 'update'])->middleware('auth');
 // Route untuk menghapus data transaksi
-Route::get('/transaksi/delete/{id}', [C_transaksi::class, 'delete'])->middleware('auth');
+Route::get('/transaksi/delete/{id}', [C_Transaksi::class, 'delete'])->middleware('auth');
 
 
 // Route untuk menuju ke form ubah profil

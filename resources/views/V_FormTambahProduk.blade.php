@@ -17,7 +17,7 @@
                 <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                 </div>
             </div>
-            <form action="/formtambahproduk" method="POST">
+            <form action="/V_FormTambahProduk" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <label for="nama_produk" class="col-sm-2 col-form-label"></label>
@@ -76,7 +76,7 @@
                     </div>
                     
                     <div class="text-right">
-                        <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'produk';" name="Batal" value="Batal" >
+                        <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'V_Produk';" name="Batal" value="Batal" >
                         <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">
                     </div>
                 </form>

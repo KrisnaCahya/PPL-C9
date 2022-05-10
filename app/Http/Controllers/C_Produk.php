@@ -8,14 +8,14 @@ use Illuminate\Routing\Controller;
 
 class C_Produk extends Controller
 {
-    public function index(){
-        $product = Products::all();
-        return view('/produk')->with('product', $product);
+    public function produk(){
+        $produk = Products::all();
+        return view('/V_Produk')->with('product', $produk);
         // $produk = Products::all();
         // return view('/produk',['produk',$produk]);
     }
 
-    public function delete(Request $request, $id){
+    public function hapus(Request $request, $id){
         // dd($id);
         $data = Products::find($id);
         $data->delete();

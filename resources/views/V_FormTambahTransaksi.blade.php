@@ -17,7 +17,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-4">
                 </div>
             </div>
-            <form action="/formtambahtransaksi" method="POST">
+            <form action="/V_FormTambahTransaksi" method="POST">
                 @csrf
                 <div class="row mb-3">
                     <label for="tanggal" class="col-sm-2 col-form-label"></label>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="text-right">
-                        <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'transaksi';" name="Batal" value="Batal" >
+                        <input class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3" type="button" onclick="window.location.href = 'V_Transaksi';" name="Batal" value="Batal" >
                         <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">
                     </div>
                 </form>

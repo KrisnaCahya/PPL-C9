@@ -8,14 +8,14 @@ use Illuminate\Routing\Controller;
 
 class C_tambahtransaksi extends Controller
 {
-    public function index(){
+    public function tambah(){
         return view('formtambahtransaksi',[
             "active" => "formtambahtransaksi",
             "title" => "formtambahtransaksi"
         ]);
     }
 
-    public function store(Request $request){
+    public function create(Request $request){
         // dd($request);
         $validatedData = $request -> validate([
             'tanggal' => ['required'],

@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/formtambahproduk">Tambah</a> 
+                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_FormTambahProduk">Tambah</a> 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>

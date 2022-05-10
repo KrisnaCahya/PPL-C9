@@ -6,20 +6,20 @@ use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class C_transaksi extends Controller
+class C_Transaksi extends Controller
 {
-    public function index(){
+    public function transaksi(){
         $transaksi = Transaksi::all();
-        return view('/transaksi')->with('transaksi', $transaksi);
+        return view('/V_Transaksi')->with('transaksi', $transaksi);
         // $produk = Products::all();
         // return view('/produk',['produk',$produk]);
     }
 
-    public function delete(Request $request, $id){
+    public function hapus(Request $request, $id){
         // dd($id);
         $data = Transaksi::find($id);
         $data->delete();
-        return redirect('/transaksi');
+        return redirect('/V_Transaksi');
         // return $request->id;
     }
 }

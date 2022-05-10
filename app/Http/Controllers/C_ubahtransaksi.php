@@ -6,9 +6,9 @@ use App\Models\Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class C_ubahtransaksi extends Controller
+class C_UbahTransaksi extends Controller
 {
-    public function edit($id){
+    public function ubah($id){
         $data = Transaksi::find($id);
         // dd($data);
         return view('formubahtransaksi', compact('data'));

@@ -6,16 +6,16 @@ use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
-class C_tambahproduk extends Controller
+class C_TambahProduk extends Controller
 {
-    public function index(){
-        return view('formtambahproduk',[
-            "active" => "formtambahproduk",
-            "title" => "formtambahproduk"
+    public function tambah(){
+        return view('V_FormTambahProduk',[
+            "active" => "V_FormTambahProduk",
+            "title" => "V_FormTambahProduk"
         ]);
     }
 
-    public function store(Request $request){
+    public function create(Request $request){
         // dd($request);
         $validatedData = $request -> validate([
             'nama_produk' => ['required'],

@@ -17,9 +17,9 @@
                     <div class="row">
                             <div class="row mt-4 mx-auto">
                             @if(auth()->user()->role == 'pegawai')
-                            <a href="/berandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
+                            <a href="/V_BerandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
                             @else
-                                <a href="/berandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
+                                <a href="/V_BerandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
                             @endif
                             <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                             <h1 class="text-center">Data Transaksi KripSkuy</h1>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/formtambahtransaksi">Tambah</a> 
+                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_FormTambahTransaksi">Tambah</a> 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
