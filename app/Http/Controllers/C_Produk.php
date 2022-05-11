@@ -19,7 +19,7 @@ class C_Produk extends Controller
         // dd($id);
         $data = Products::find($id);
         $data->delete();
-        return redirect('/produk');
+        return redirect('/V_Produk');
         // return $request->id;
     }
     

@@ -28,6 +28,6 @@ class C_UbahTransaksi extends Controller
         $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
         $data->update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data transaksi telah berhasil!');
-        return redirect('/transaksi'); 
+        return redirect('/V_Transaksi'); 
     }
 }

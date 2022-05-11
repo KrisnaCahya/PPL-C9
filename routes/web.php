@@ -82,6 +82,19 @@ Route::post('/transaksi/update/{id}', [C_ubahtransaksi::class, 'update'])->middl
 // Route untuk menghapus data transaksi
 Route::get('/transaksi/delete/{id}', [C_Transaksi::class, 'delete'])->middleware('auth');
 
+// Route untuk menuju ke halaman jadwal
+Route::get('/V_Jadwal', [C_Jadwal::class, 'jadwal'])->middleware('auth');
+// Route untuk menambah data jadwal
+Route::post('/V_TambahJadwal', [C_TambahJadwal::class, 'tambah'])->middleware('auth');
+// Route untuk menambah data jadwal
+Route::post('/V_TambahJadwal', [C_TambahJadwal::class, 'create'])->middleware('auth');
+
+// Route untuk menampilkan form ubah data jadwal
+Route::get('/UbahJadwal/{id}', [C_UbahJadwal::class, 'edit'])->middleware('auth');
+// Route untuk mengupdate data jadwal
+Route::post('/UbahJadwal/update/{id}', [C_ubahtransaksi::class, 'update'])->middleware('auth');
+// Route untuk menghapus data jadwal
+Route::get('/jadwal/delete/{id}', [C_Transaksi::class, 'hapus'])->middleware('auth');
 
 // Route untuk menuju ke form ubah profil
 Route::get('/V_FormUbahProfil', [C_UbahProfil::class, 'UbahProfil'])->middleware('auth');

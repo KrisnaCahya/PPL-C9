@@ -28,6 +28,6 @@ class C_UbahProduk extends Controller
         $validatedData["jumlah_sisa_produk"] = $validatedData["jumlah_produk_masuk"]-$validatedData["jumlah_produk_keluar"];
         $data->update($validatedData);
         $request->session()->flash('updateSuccess', 'Ubah data produk telah berhasil!');
-        return redirect('/produk'); 
+        return redirect('/V_Produk'); 
     }
 }

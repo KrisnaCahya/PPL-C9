@@ -28,6 +28,6 @@ class C_tambahtransaksi extends Controller
         $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
         Transaksi::create($validatedData);
         $request->session()->flash('successAddTransaction','Data transaksi berhasil ditambahkan!');
-        return redirect('/transaksi');
+        return redirect('/V_Transaksi');
     }
 }
