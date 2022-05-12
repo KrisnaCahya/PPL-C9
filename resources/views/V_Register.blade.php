@@ -93,7 +93,7 @@
                     </div>
                     <div class="text-right">
                         <input class="btn btn-warning mx-auto col-sm-4 mb-3 mt-3" type="submit" name="Daftar" value="Daftar">
-                        <p>Sudah punya akun? <a href="login">Login</a>.</p>   
+                        <p>Sudah punya akun? <a href="V_Login">Login</a>.</p>   
                     </div>
                 </form>
             </div>

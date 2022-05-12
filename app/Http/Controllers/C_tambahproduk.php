@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\M_Produk;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
@@ -27,7 +27,7 @@ class C_TambahProduk extends Controller
         ]);
         
         $validatedData["jumlah_sisa_produk"] = $validatedData["jumlah_produk_masuk"]-$validatedData["jumlah_produk_keluar"];
-        Products::create($validatedData);
+        M_Produk::create($validatedData);
         $request->session()->flash('successAddProduct','Data produk berhasil ditambahkan!');
         return redirect('/V_Produk');
     }

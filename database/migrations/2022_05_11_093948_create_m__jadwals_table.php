@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->String('nama');
             $table->string('tugas');
+            $table->date('tanggal');
             $table->time('jam_masuk');
             $table->time('jam_pulang');
             $table->timestamps();

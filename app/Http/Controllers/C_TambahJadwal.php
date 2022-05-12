@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\M_Jadwal;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class C_TambahJadwal extends Controller
 {

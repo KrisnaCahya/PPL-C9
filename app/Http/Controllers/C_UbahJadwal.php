@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\M_Jadwal;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class C_UbahJadwal extends Controller
 {
@@ -22,7 +23,7 @@ class C_UbahJadwal extends Controller
             'jam_pulang' => ['required'],
         ]);
         
-        User::where('id',$request->id) -> update($validatedData);
+        M_Jadwal::where('id',$request->id) -> update($validatedData);
         // $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
         return redirect('/V_Jadwal');
 

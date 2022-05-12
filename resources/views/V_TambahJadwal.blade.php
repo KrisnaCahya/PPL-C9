@@ -33,7 +33,7 @@
                 <div class="row mb-3">
                     <label for="tugas" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
-                        <input type="number" class="form-control @error('tugas') is-invalid @enderror" id="tugas" name = "tugas" placeholder="Masukkan tugas">
+                        <input type="text" class="form-control @error('tugas') is-invalid @enderror" id="tugas" name = "tugas" placeholder="Masukkan tugas">
                         @error('tugas')
                         <div class="invalid-feedback">
                             {{ $message }}

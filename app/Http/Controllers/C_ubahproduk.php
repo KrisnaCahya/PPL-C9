@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Products;
+use App\Models\M_Produk;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class C_UbahProduk extends Controller
 {
     public function ubah($id){
-        $data = Products::find($id);
+        $data = M_Produk::find($id);
         // dd($data);
         return view('V_FormUbahProduk', compact('data'));
     }
     
     public function update(Request $request, $id){
         // dd($request);
-        $data = Products::find($id);
+        $data = M_Produk::find($id);
         $validatedData = $request->validate([
             'nama_produk' => ['required',],
             'satuan' => ['required'],

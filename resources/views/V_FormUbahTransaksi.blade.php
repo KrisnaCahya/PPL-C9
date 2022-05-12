@@ -14,7 +14,7 @@
         <div class="card container-fluid text-center mx-auto" style="margin-top: 80px; border-radius: 25px;">
             <div class="card-body">
                 <div class="row">
-                    <a href="/transaksi" class="fa fa-back"></a>
+                    <a href="/V_Transaksi" class="fa fa-back"></a>
                     <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                 </div>
             </div>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="text-right">
-                        <a href="/transaksi" class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3">Batal</a>
+                        <a href="/V_Transaksi" class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3">Batal</a>
                         <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">
                     </div>
                 </form>

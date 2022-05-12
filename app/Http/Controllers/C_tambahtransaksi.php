@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaksi;
+use App\Models\M_Transaksi;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
 class C_tambahtransaksi extends Controller
 {
     public function tambah(){
-        return view('formtambahtransaksi',[
-            "active" => "formtambahtransaksi",
-            "title" => "formtambahtransaksi"
+        return view('V_FormTambahTransaksi',[
+            "active" => "V_FormTambahTransaksi",
+            "title" => "V_FormTambahTransaksi"
         ]);
     }
 
@@ -26,7 +26,7 @@ class C_tambahtransaksi extends Controller
         ]);
         
         $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
-        Transaksi::create($validatedData);
+        M_Transaksi::create($validatedData);
         $request->session()->flash('successAddTransaction','Data transaksi berhasil ditambahkan!');
         return redirect('/V_Transaksi');
     }
