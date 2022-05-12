@@ -18,12 +18,12 @@
                     <div class="row">
                             <div class="row mt-4 mx-auto">
                             @if(auth()->user()->role == 'pegawai')
-                            <a href="/berandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
+                            <a href="/V_BerandaPegawai" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
                             @else
-                                <a href="/berandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
+                                <a href="/V_BerandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
                             @endif
-                            <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
-                            <h1 class="text-center">Data Produk KripSkuy</h1>
+                            <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                            <h1 class="text-center">Data Jadwal Pegawai</h1>
                             <table class="table table-bordered border-dark mt-5">
                                 <thead style="background-color:#FFC13C;">
                                     <tr>
@@ -36,22 +36,22 @@
                                     <th scope="col" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
-                                @foreach ($product as $produk)
+                                @foreach ($data as $rowDataJadwal)
                                 <tbody>
                                     <?php
                                      $no=1;
                                     ?>
                                     <tr>
                                     <td>{{ $no++ }}</td>
-                                    <td>{{ $produk->nama}}</td>
-                                    <td>{{ $produk->tugas}}</td>
-                                    <td>{{ $produk->tanggal}}</td>
-                                    <td>{{ $produk->jam_masuk}}</td>
-                                    <td>{{ $produk->jam_pulang}}</td>
+                                    <td>{{ $rowDataJadwal->nama }}</td>
+                                    <td>{{ $rowDataJadwal->tugas }}</td>
+                                    <td>{{ $rowDataJadwal->tanggal }}</td>
+                                    <td>{{ $rowDataJadwal->jam_masuk }}</td>
+                                    <td>{{ $rowDataJadwal->jam_pulang }}</td>
                                     <td class="text-center">
-                                        <!-- <input type="hidden" name="id" value="{{ $produk->id }}"> -->
-                                        <a href="#" class="btn btn-danger fa fa-trash delete" data-id="{{ $jadwal->id }}" data-name="{{ $jadwal->nama }}"></a>
-                                        <a href="/ubahjadwal/{{ $jadwal->id }}" class="btn btn-warning fa fa-edit"></a>
+                                        <!-- <input type="hidden" name="id" value="{{ $rowDataJadwal->id }}"> -->
+                                        <a href="#" class="btn btn-danger fa fa-trash delete" data-id="{{ $rowDataJadwal->id }}" data-name="{{ $rowDataJadwal->nama }}"></a>
+                                        <a href="/UbahJadwal/{{ $rowDataJadwal->id }}" class="btn btn-warning fa fa-edit"></a>
                                     </td>
                                     </tr>
                                 </tbody>
@@ -60,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_FormTambahProduk">Tambah</a> 
+                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_TambahJadwal">Tambah</a> 
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
@@ -68,8 +68,8 @@
 </body>
 <script>
     $('.delete').click(function(){
-        var produk_id = $(this).attr('data-id');
-        var nama_produk = $(this).attr('data-name');
+        var jadwal_id = $(this).attr('data-id');
+        var nama = $(this).attr('data-name');
         const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
         confirmButton: 'btn btn-warning mx-3',
@@ -80,7 +80,7 @@
 
     swalWithBootstrapButtons.fire({
         title: "Peringatan!",
-        text: "Yakin ingin menghapus data produk ID "+produk_id+" dengan nama "+nama_produk+"?",
+        text: "Yakin ingin menghapus data jadwal ID "+jadwal_id+" dengan nama "+nama+"?",
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#FFC107',
@@ -90,7 +90,7 @@
         reverseButtons: true
     }).then((result) => {
     if (result.isConfirmed) {
-        window.location = "/produk/delete/"+produk_id+""
+        window.location = "/jadwal/delete/"+jadwal_id+""
         swalWithBootstrapButtons.fire(
             'Terhapus!',
             'Data produk berhasil dihapus',
