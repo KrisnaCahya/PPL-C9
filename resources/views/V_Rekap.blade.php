@@ -30,31 +30,38 @@
                             @else
                                 <a href="/V_BerandaMitra" style="color:black;" aria-hidden="true"><i class="fa fa-long-arrow-left fa-2x" aria-hidden="true"></i></a>
                             @endif
-                            <img src="img/boxproduct.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/557/557933.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3">
                             <h1 class="text-center mb-5">Rekapitulasi Keuangan KripsKuy</h1>
                             <input class="datepicker" id="datepicker" onkeydown="return false">
                             <table class="table table-bordered border-dark mt-5">
-                                <thead style="background-color:#FFC13C;">
-                                    <tr>
-                                        <th scope="col">Minggu ke-</th>
-                                        <th scope="col">Total pemasukan</th>
-                                    <th scope="col">Total pengeluaran</th>
-                                    <th scope="col">Keuntungan</th>
-                                </tr>
+                            <thead style="background-color:#FFC13C;" class="text-center">
+                            <tr>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Pemasukan</th>
+                                <th scope="col">Pengeluaran</th>
+                                <th scope="col">Keuntungan</th>
+                            </tr>
                             </thead>
                             @foreach ($data as $itemRekap)
                             <tbody>
                                 <?php
-                                     $no=1;
-                                     ?>
+                                   
+                                    $no=1;
+                                ?>
                                     <tr>
-                                    <td>{{ $no++ }}</td>
-                                    <td>{{ $itemRekap->sum('pemasukan') }}</td>
-                                    <td>{{ $itemRekap->sum('pengeluaran') }}</td>
-                                    <td>{{ $itemRekap->sum('pemasukan') - $itemRekap->sum('pengeluaran') }}</td>
+                                    <td>{{ $itemRekap->tanggal }}</td>
+                                    <td>{{ $itemRekap->pemasukan }}</td>
+                                    <td>{{ $itemRekap->pengeluaran }}</td>
+                                    <td>{{ $itemRekap->pemasukan - $itemRekap->pengeluaran }}</td>
                                     </tr>   
                                 </tbody>
                                 @endforeach
+                                <tr>
+                                <td class="fw-bold">Total</td>
+                                <td>{{ $data->sum('pemasukan') }}</td>
+                                <td>{{ $data->sum('pengeluaran') }}</td>
+                                <td>{{ $data->sum('pemasukan') - $data->sum('pengeluaran') }}</td>
+                                </tr>   
                                 </table>
                             </div>
                         </div>
