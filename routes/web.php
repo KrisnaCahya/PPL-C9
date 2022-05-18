@@ -17,6 +17,7 @@ use App\Http\Controllers\C_TambahProduk;
 use App\Http\Controllers\C_ProfilPegawai;
 use App\Http\Controllers\C_ubahtransaksi;
 use App\Http\Controllers\C_tambahtransaksi;
+use App\Http\Controllers\C_Rekap;
 
 
 /*
@@ -108,6 +109,9 @@ Route::post('/profil/update', [C_UbahProfil::class, 'update'])->middleware('auth
 // Route menampilkan profil pegawai
 Route::get('/V_ProfilPegawai', [C_ProfilPegawai::class, 'ProfilPegawai'])->middleware('auth');
 
+// Route menampilkan rekap keuangan
+// Route::get('/V_Rekap', [C_Rekap::class, 'rekapkeuangan'])->middleware('auth');
+Route::get('/V_Rekap/{tahun}/{bulan}', [C_Rekap::class, 'rekapkeuangan'])->middleware('auth');
 
 // REGISTER
 // Menampilkan halaman register

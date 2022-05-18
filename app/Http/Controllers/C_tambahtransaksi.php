@@ -21,11 +21,11 @@ class C_tambahtransaksi extends Controller
             'tanggal' => ['required'],
             'nama_produk' => ['required',],
             'jumlah_produk' => ['required'],
-            'harga_satuan' => ['required'],
-            'total_harga' => [''],
+            'pemasukan' => ['required'],
+            'pengeluaran' => ['required'],
         ]);
         
-        $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
+        // $validatedData["total_harga"] = $validatedData["jumlah_produk"]*$validatedData["harga_satuan"];
         M_Transaksi::create($validatedData);
         $request->session()->flash('successAddTransaction','Data transaksi berhasil ditambahkan!');
         return redirect('/V_Transaksi');

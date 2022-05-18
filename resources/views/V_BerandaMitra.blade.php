@@ -80,21 +80,37 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-3 col-sm-2">
+                    <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
+                        <div class="card-body">
+                        <a style="text-decoration:none;color:black;" href="/V_Jadwal">
+                            <div class="col">
+                                <div class="row">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/2693/2693507.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
+                                </div>
+                                <div class="row">
+                                    <p class="text-center mt-4">Jadwal</p>
+                                </div>
+                            </div>
+                        </a>
+                        </div>  
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-3 col-sm-2">
                 <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                     <div class="card-body">
-                    <a style="text-decoration:none;color:black;" href="/V_Produk">
+                    <a style="text-decoration:none;color:black;" href="/V_Rekap/{{ idate('Y') }}/{{ idate('m') }}">
                         <div class="col">
                             <div class="row">
                                 <img src="https://cdn-icons-png.flaticon.com/512/1524/1524539.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                             </div>
                             <div class="row">
-                                <p class="text-center mt-4">Produk</p>
+                                <p class="text-center mt-4">Rekapitulasi</p>
                             </div>
                         </div>
                     </a>
                     </div>  
                 </div>
-            </div>
+            <div class="row justify-content-start mt-5 mb-5">
                 <div class="col-xl-4 col-md-3 col-sm-2">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
@@ -112,10 +128,12 @@
                                     </div>  
                                 </div>
                             </form>
-                            <!-- </a> -->
+                            </a>
                         </div>  
                     </div>
                 </div>
-            </div>
+            </div>    
+        </div>
+    </div>
 </body>
 </html>

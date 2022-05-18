@@ -30,8 +30,8 @@
                                     <th scope="col">Tanggal</th>
                                     <th scope="col">Nama Produk</th>
                                     <th scope="col">Jumlah Produk</th>
-                                    <th scope="col">Harga Satuan</th>
-                                    <th scope="col">Total Harga</th>
+                                    <th scope="col">Pemasukan</th>
+                                    <th scope="col">Pengeluaran</th>
                                     <th scope="col" class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
@@ -45,8 +45,8 @@
                                     <td>{{ $itemTransaksi->tanggal}}</td>
                                     <td>{{ $itemTransaksi->nama_produk}}</td>
                                     <td>{{ $itemTransaksi->jumlah_produk}}</td>
-                                    <td>{{ $itemTransaksi->harga_satuan}}</td>
-                                    <td>{{ $itemTransaksi->total_harga}}</td>
+                                    <td>{{ $itemTransaksi->pemasukan}}</td>
+                                    <td>{{ $itemTransaksi->pengeluaran}}</td>
                                     <td class="text-center">
                                         <a href="#" class="btn btn-danger fa fa-trash delete mx-1" data-id="{{ $itemTransaksi->id }}" data-name="{{ $itemTransaksi->nama_produk }}"></a>
                                         <a href="/formubahtransaksi/{{ $itemTransaksi->id }}" class="btn btn-warning fa fa-edit mx-1"></a>

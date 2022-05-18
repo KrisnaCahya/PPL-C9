@@ -55,21 +55,32 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                        <label for="harga_satuan" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <input type="number" class="form-control @error('harga_satuan') is-invalid @enderror" id="harga_satuan" name = "harga_satuan" placeholder= "Masukkan jumlah harga satuan" value="{{ $data->harga_satuan }}">
-                            @error('harga_satuan')
-                            <div class="invalid-feedback">
-                                {{ $message }}
-                            </div>
-                            @enderror
+                    <label for="pemasukan" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control @error('pemasukan') is-invalid @enderror" id="pemasukan" name = "pemasukan" placeholder="Masukkan jumlah produk" value="{{ $data->pemasukan }}">
+                        @error('pemasukan')
+                        <div class="invalid-feedback">
+                            {{ $message }}
                         </div>
+                        @enderror
                     </div>
-                    <div class="text-right">
-                        <a href="/V_Transaksi" class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3">Batal</a>
-                        <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">
+                </div>
+                <div class="row mb-3">
+                    <label for="pengeluaran" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <input type="number" class="form-control @error('pengeluaran') is-invalid @enderror" id="pengeluaran" name = "pengeluaran" placeholder="Masukkan jumlah produk" value="{{ $data->pengeluaran }}">
+                        @error('pengeluaran')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
-                </form>
+                </div>
+                <div class="text-right">
+                    <a href="/V_Transaksi" class="btn btn-danger mx-3 col-sm-3 mb-5 mt-3">Batal</a>
+                    <input class="btn btn-warning mx-3 col-sm-3 mb-5 mt-3" type="submit" name="Simpan" value="Simpan">
+                </div>
+            </form>
             </div>
         </div>
     </div>
