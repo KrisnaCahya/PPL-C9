@@ -19,10 +19,10 @@ class C_TambahProduk extends Controller
         // dd($request);
         $validatedData = $request -> validate([
             'nama_produk' => ['required'],
-            'satuan' => ['required','integer'],
+            'satuan' => ['required'],
             'tanggal' => ['required','date'],
-            'jumlah_produk_masuk' => ['required','integer'],
-            'jumlah_produk_keluar' => ['required','integer'],
+            'jumlah_produk_masuk' => ['required'],
+            'jumlah_produk_keluar' => ['required'],
             'jumlah_sisa_produk' => [''],
         ]);
         

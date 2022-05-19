@@ -51,13 +51,13 @@ Route::get('/V_Dashboard', [C_dashboard::class, 'index'])->middleware('guest');
 
 // Route untuk menuju ke halaman beranda mitra
 Route::get('/V_BerandaMitra', [C_beranda::class, 'index'])->middleware('auth');
-// Route untuk menuju ke halaman pegawai
+// Route untuk menuju ke halaman beranda pegawai
 Route::get('/V_BerandaPegawai', [C_beranda::class, 'index'])->middleware('auth');
 
 // Route untuk menuju ke halaman produk
 Route::get('/V_Produk', [C_Produk::class, 'produk'])->middleware('auth');
 
-// Route untuk menuju ke halaman produk
+// Route untuk menuju ke halaman tambah produk
 Route::get('/V_FormTambahProduk', [C_TambahProduk::class, 'tambah'])->middleware('auth');
 // Route untuk menambah data produk
 Route::post('/V_FormTambahProduk', [C_TambahProduk::class, 'create'])->middleware('auth');
@@ -110,22 +110,18 @@ Route::post('/profil/update', [C_UbahProfil::class, 'update'])->middleware('auth
 Route::get('/V_ProfilPegawai', [C_ProfilPegawai::class, 'ProfilPegawai'])->middleware('auth');
 
 // Route menampilkan rekap keuangan
-// Route::get('/V_Rekap', [C_Rekap::class, 'rekapkeuangan'])->middleware('auth');
 Route::get('/V_Rekap/{tahun}/{bulan}', [C_Rekap::class, 'rekapkeuangan'])->middleware('auth');
 
 // REGISTER
 // Menampilkan halaman register
 Route::get('/V_Register', [C_Register::class, 'Register'])->middleware('guest');
-
 // Route untuk create akun baru
 Route::post('/V_Register', [C_Register::class, 'Create'])->middleware('guest');
 
 // LOGIN
 // Menampilkan view form login
 Route::get('/V_Login', [C_Login::class, 'login'])->name('login')->middleware('guest');
-
 // Mengotentikasi data request dengan database untuk login
 Route::post('/V_Login', [C_Login::class, 'authenticate'])->middleware('guest');
-
 // Route untuk logout
 Route::post('/logout', [C_Login::class, 'logout'])->middleware('auth');

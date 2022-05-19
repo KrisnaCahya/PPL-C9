@@ -55,10 +55,10 @@
                     </div>
                 </div>
                 <div class="row mb-3">
-                        <label for="jadwal_masuk" class="col-sm-2 col-form-label"></label>
+                        <label for="jam_masuk" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input type="time" class="form-control @error('jadwal_masuk') is-invalid @enderror" id="jadwal_masuk" name = "jadwal_masuk" placeholder= "Masukkan jadwal masuk" value="{{ $data->jadwal_masuk }}">
-                            @error('jadwal_masuk')
+                            <input type="time" class="form-control @error('jam_masuk') is-invalid @enderror" id="jam_masuk" name = "jam_masuk" placeholder= "Masukkan jadwal masuk" value="{{ $data->jam_masuk }}">
+                            @error('jam_masuk')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -66,10 +66,10 @@
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="jadwal_pulang" class="col-sm-2 col-form-label"></label>
+                        <label for="jam_pulang" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input type="time" class="form-control @error('jadwal_pulang') is-invalid @enderror" id="jadwal_pulang" name = "jadwal_pulang" placeholder= "Masukkan jadwal_pulang" value="{{ $data->jadwal_pulang }}">
-                            @error('jadwal_pulang')
+                            <input type="time" class="form-control @error('jam_pulang') is-invalid @enderror" id="jam_pulang" name = "jam_pulang" placeholder= "Masukkan jadwal pulang" value="{{ $data->jam_pulang }}">
+                            @error('jam_pulang')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

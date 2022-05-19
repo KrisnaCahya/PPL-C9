@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('m__produks', function (Blueprint $table) {
             $table->id();
             $table->string('nama_produk');
-            $table->integer('satuan');
+            $table->string('satuan');
             $table->date('tanggal');
             $table->integer('jumlah_produk_masuk');
             $table->integer('jumlah_produk_keluar');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2022 at 11:11 PM
+-- Generation Time: May 19, 2022 at 03:30 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -58,8 +58,84 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_resets_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_04_10_201118_create_products_table', 1),
-(6, '2022_04_27_184852_create_transaksis_table', 1);
+(5, '2022_05_11_093948_create_m__jadwals_table', 1),
+(6, '2022_05_12_133628_create_m__produks_table', 1),
+(7, '2022_05_12_160715_create_m__transaksis_table', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m__jadwals`
+--
+
+CREATE TABLE `m__jadwals` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tugas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal` date NOT NULL,
+  `jam_masuk` time NOT NULL,
+  `jam_pulang` time NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `m__jadwals`
+--
+
+INSERT INTO `m__jadwals` (`id`, `nama`, `tugas`, `tanggal`, `jam_masuk`, `jam_pulang`, `created_at`, `updated_at`) VALUES
+(1, 'pegawai1', 'Rekapitulasi', '2022-05-16', '09:26:00', '21:26:00', '2022-05-18 18:26:39', '2022-05-18 18:26:52');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m__produks`
+--
+
+CREATE TABLE `m__produks` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tanggal` date NOT NULL,
+  `jumlah_produk_masuk` int(11) NOT NULL,
+  `jumlah_produk_keluar` int(11) NOT NULL,
+  `jumlah_sisa_produk` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `m__produks`
+--
+
+INSERT INTO `m__produks` (`id`, `nama_produk`, `satuan`, `tanggal`, `jumlah_produk_masuk`, `jumlah_produk_keluar`, `jumlah_sisa_produk`, `created_at`, `updated_at`) VALUES
+(1, 'kripik singkong balado', '250gram', '2022-05-16', 10, 4, 6, '2022-05-18 18:28:35', '2022-05-18 18:28:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `m__transaksis`
+--
+
+CREATE TABLE `m__transaksis` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tanggal` date NOT NULL,
+  `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `jumlah_produk` int(11) NOT NULL,
+  `pemasukan` int(11) NOT NULL,
+  `pengeluaran` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `m__transaksis`
+--
+
+INSERT INTO `m__transaksis` (`id`, `tanggal`, `nama_produk`, `jumlah_produk`, `pemasukan`, `pengeluaran`, `created_at`, `updated_at`) VALUES
+(1, '2022-05-13', 'kripik singkong balado', 5, 50000, 0, '2022-05-18 18:25:27', '2022-05-18 18:25:27'),
+(2, '2022-05-16', 'kripik singkong original', 5, 70000, 0, '2022-05-18 18:25:51', '2022-05-18 18:25:51'),
+(3, '2022-05-16', 'Minyak goreng', 4, 0, 80000, '2022-05-18 18:26:11', '2022-05-18 18:26:11');
 
 -- --------------------------------------------------------
 
@@ -94,55 +170,6 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `satuan` int(11) NOT NULL,
-  `tanggal` date NOT NULL,
-  `jumlah_produk_masuk` int(11) NOT NULL,
-  `jumlah_produk_keluar` int(11) NOT NULL,
-  `jumlah_sisa_produk` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `nama_produk`, `satuan`, `tanggal`, `jumlah_produk_masuk`, `jumlah_produk_keluar`, `jumlah_sisa_produk`, `created_at`, `updated_at`) VALUES
-(1, 'kripik singkong kocak aja', 21, '2022-04-09', 21, 11, 11, '2022-04-27 12:25:03', '2022-04-27 12:25:03');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `transaksis`
---
-
-CREATE TABLE `transaksis` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `tanggal` date NOT NULL,
-  `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `jumlah_produk` int(11) NOT NULL,
-  `harga_satuan` int(11) NOT NULL,
-  `total_harga` int(11) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `transaksis`
---
-
-INSERT INTO `transaksis` (`id`, `tanggal`, `nama_produk`, `jumlah_produk`, `harga_satuan`, `total_harga`, `created_at`, `updated_at`) VALUES
-(2, '2022-04-07', 'kripik pisang kocak geming', 1221, 1231, 211, '2022-04-27 12:17:55', '2022-04-27 12:18:33');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -165,8 +192,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `nama`, `nohp`, `email`, `alamat`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'fkrsyy', 'Fikri Ariqsya', '081364739191', 'fikriariqsyarahman98@gmail.com', 'Bekasi', '$2y$10$itCj0r1JOc2d6atT0ftD4OurjparHfVK94kEHIOL4f3YaOdvNRs7m', 'owner', NULL, '2022-04-27 11:58:22', '2022-04-27 11:58:22'),
-(2, 'pegawai1', 'pegawai 1', '081234567890', 'Jon.Stephens@sakilastaff.com', 'Jakarta', '$2y$10$ZIH2R3gCzNf2AaDGOA3upOqa3U1yOXfX5qdgrGvanRYO05goXBGS6', 'pegawai', NULL, '2022-04-27 12:24:35', '2022-04-27 12:24:35');
+(1, 'fkrsyy', 'Fikri Ariqsya', '081364739191', 'fikriariqsyarahman98@gmail.com', 'Bandung', '$2y$10$Oskewqf1PrPnuUHPpFd0EOWx8AuWutRzhkJ86Tx2IwDPjogVdjjtS', 'owner', NULL, '2022-05-18 18:23:09', '2022-05-18 18:23:09'),
+(2, 'pegawai1', 'pegawai 1', '081364739192', 'Jon.Stephens@sakilastaff.com', 'Bandung', '$2y$10$nBHLv55xtqTxyU/SJa.UMuoWdJBR7zqEWPdNjDbCiI3ySxaFDVgvK', 'pegawai', NULL, '2022-05-18 18:23:40', '2022-05-18 18:23:40');
 
 --
 -- Indexes for dumped tables
@@ -186,6 +213,24 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `m__jadwals`
+--
+ALTER TABLE `m__jadwals`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `m__produks`
+--
+ALTER TABLE `m__produks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `m__transaksis`
+--
+ALTER TABLE `m__transaksis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -198,18 +243,6 @@ ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `personal_access_tokens_token_unique` (`token`),
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `transaksis`
---
-ALTER TABLE `transaksis`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -232,25 +265,31 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `m__jadwals`
+--
+ALTER TABLE `m__jadwals`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `m__produks`
+--
+ALTER TABLE `m__produks`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `m__transaksis`
+--
+ALTER TABLE `m__transaksis`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `transaksis`
---
-ALTER TABLE `transaksis`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`

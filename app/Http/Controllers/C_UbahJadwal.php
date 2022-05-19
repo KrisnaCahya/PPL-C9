@@ -13,8 +13,9 @@ class C_UbahJadwal extends Controller
         return view('V_UbahJadwal', compact('data'));
     }
 
-    public function update(Request $request){
+    public function update(Request $request, $id){
         // dd($request);
+        $data = M_Jadwal::find($id);
         $validatedData = $request->validate([
             'nama' => ['required'],
             'tugas' => ['required'],
@@ -23,9 +24,9 @@ class C_UbahJadwal extends Controller
             'jam_pulang' => ['required'],
         ]);
         
-        M_Jadwal::where('id',$request->id) -> update($validatedData);
-        // $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
-        return redirect('/V_Jadwal');
+        $data->update($validatedData);
+        // $request->session()->flash('updateSuccess', 'Ubah data produk telah berhasil!');
+        return redirect('/V_Jadwal'); 
 
     }
 }

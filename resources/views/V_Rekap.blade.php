@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -19,7 +20,7 @@
         <!-- <img src="https://cdn.discordapp.com/attachments/811787451621441546/961774332479143976/unknown.png" alt="" srcset="" style="width: 80px;height: 55px;" class="mx-auto mt-3 mb-5"> -->
         <div class="card container-fluid mt-4" style="margin-top: 80px;margin-left: 10px;">
             <div class="card-body">
-                    <div class="row">
+                <div class="row">
                     <div class="row">
                         <!-- <img src="https://cdn-icons-png.flaticon.com/512/1751/1751700.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3 mb-3"> -->
                     </div>
@@ -34,53 +35,98 @@
                             <h1 class="text-center mb-5">Rekapitulasi Keuangan KripsKuy</h1>
                             <input class="datepicker" id="datepicker" onkeydown="return false">
                             <table class="table table-bordered border-dark mt-5">
-                            <thead style="background-color:#FFC13C;" class="text-center">
-                            <tr>
-                                <th scope="col">Tanggal</th>
-                                <th scope="col">Pemasukan</th>
-                                <th scope="col">Pengeluaran</th>
-                                <th scope="col">Keuntungan</th>
-                            </tr>
-                            </thead>
-                            @foreach ($data as $itemRekap)
-                            <tbody>
-                                <?php
-                                   
-                                    $no=1;
-                                ?>
+                                <thead style="background-color:#FFC13C;" class="text-center">
+                                    <div id="chart"></div>
                                     <tr>
-                                    <td>{{ $itemRekap->tanggal }}</td>
-                                    <td>{{ $itemRekap->pemasukan }}</td>
-                                    <td>{{ $itemRekap->pengeluaran }}</td>
-                                    <td>{{ $itemRekap->pemasukan - $itemRekap->pengeluaran }}</td>
-                                    </tr>   
-                                </tbody>
+                                        <th scope="col">Tanggal</th>
+                                        <th scope="col">Pemasukan</th>
+                                        <th scope="col">Pengeluaran</th>
+                                        <th scope="col">Keuntungan</th>
+                                    </tr>
+                                </thead>
+                                @foreach ($data as $itemRekap)
+                                <tbody>
+                                    <tr>
+                                            <td>{{ $itemRekap->tanggal }}</td>
+                                            <td>{{ $itemRekap->pemasukan }}</td>
+                                            <td>{{ $itemRekap->pengeluaran }}</td>
+                                            <td>{{ $itemRekap->pemasukan - $itemRekap->pengeluaran }}</td>
+                                        </tr>   
                                 @endforeach
                                 <tr>
-                                <td class="fw-bold">Total</td>
-                                <td>{{ $data->sum('pemasukan') }}</td>
-                                <td>{{ $data->sum('pengeluaran') }}</td>
-                                <td>{{ $data->sum('pemasukan') - $data->sum('pengeluaran') }}</td>
-                                </tr>   
+                                            <td class="fw-bold">Total</td>
+                                            <td class="fw-bold">{{ $data->sum('pemasukan') }}</td>
+                                            <td class="fw-bold">{{ $data->sum('pengeluaran') }}</td>
+                                            <td class="fw-bold">{{ $data->sum('pemasukan') - $data->sum('pengeluaran') }}</td>
+                                        </tr>   
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
-        </div>
-    </div>
+                </div>
+            </div>
 </body>
-    <script type="text/javascript">
-        var dp=$("#datepicker").datepicker({
-            setDates: new Date(),
-            autoclose: true,
-            format: "MM-yyyy",
-            startView: "months", 
-            minViewMode: "months"});
-        $('.datepicker').datepicker('setDate', new Date(window.location.pathname.split('/')[2], window.location.pathname.split('/')[3]-1, 1));
-            dp.on('changeMonth', function(e){
-            console.log(e.date);
-            window.location = `/V_Rekap/${e.date.getFullYear()}/${e.date.getMonth()+1}`;
-        });
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script type="text/javascript">
+    var dp=$("#datepicker").datepicker({
+        setDates: new Date(),
+        autoclose: true,
+        format: "MM-yyyy",
+        startView: "months", 
+        minViewMode: "months"});
+    $('.datepicker').datepicker('setDate', new Date(window.location.pathname.split('/')[2], window.location.pathname.split('/')[3]-1, 1));
+        dp.on('changeMonth', function(e){
+        console.log(e.date);
+        window.location = `/V_Rekap/${e.date.getFullYear()}/${e.date.getMonth()+1}`;
+    });
+//         var datas = <?php echo json_encode($datas) ?>
+//         Highcharts.chart('chart', {
+//         title: {
+//             text: 'Rekapitulasi Keuangan KripsKuy'
+//         },
+//         subtitle: {
+//             text: 'Source: itsolutionstuff.com.com'
+//         },
+//          xAxis: {
+//             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+//         },
+//         yAxis: {
+//             title: {
+//                 text: 'Keuntungan'
+//             }
+//         },
+//         legend: {
+//             layout: 'vertical',
+//             align: 'right',
+//             verticalAlign: 'middle'
+//         },
+//         plotOptions: {
+//             series: {
+//                 allowPointSelect: true
+//             }
+//         },
+//         series: [{
+//             name: 'Keuntungan',
+//             data: datas
+//         }],
+//         responsive: {
+//             rules: [{
+//                 condition: {
+//                     maxWidth: 500
+//                 },
+//                 chartOptions: {
+//                     legend: {
+//                         layout: 'horizontal',
+//                         align: 'center',
+//                         verticalAlign: 'bottom'
+//                     }
+//                 }
+//             }]
+//         }
+// });
+
+
     </script>    
 
 </html>

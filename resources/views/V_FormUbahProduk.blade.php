@@ -35,7 +35,7 @@
                 <div class="row mb-3">
                     <label for="satuan" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
-                        <input type="number" class="form-control @error('satuan') is-invalid @enderror" id="satuan" name = "satuan" placeholder="Masukkan Satuan" value="{{ $data->satuan }}">
+                        <input type="text" class="form-control @error('satuan') is-invalid @enderror" id="satuan" name = "satuan" placeholder="Masukkan Satuan" value="{{ $data->satuan }}">
                         @error('nama')
                         <div class="invalid-feedback">
                             {{ $message }}
