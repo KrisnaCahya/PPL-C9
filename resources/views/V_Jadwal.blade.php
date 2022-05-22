@@ -33,7 +33,9 @@
                                     <th scope="col">Tanggal</th>
                                     <th scope="col">Jam Masuk</th>
                                     <th scope="col">Jam Pulang</th>
+                                    @if(auth()->user()->role == 'owner')
                                     <th scope="col" class="text-center">Aksi</th>
+                                    @endif
                                     </tr>
                                 </thead>
                                 @foreach ($data as $rowDataJadwal)
@@ -48,11 +50,13 @@
                                     <td>{{ $rowDataJadwal->tanggal }}</td>
                                     <td>{{ $rowDataJadwal->jam_masuk }}</td>
                                     <td>{{ $rowDataJadwal->jam_pulang }}</td>
+                                    @if(auth()->user()->role == 'owner')
                                     <td class="text-center">
                                         <!-- <input type="hidden" name="id" value="{{ $rowDataJadwal->id }}"> -->
                                         <a href="#" class="btn btn-danger fa fa-trash delete" data-id="{{ $rowDataJadwal->id }}" data-name="{{ $rowDataJadwal->nama }}"></a>
                                         <a href="/UbahJadwal/{{ $rowDataJadwal->id }}" class="btn btn-warning fa fa-edit"></a>
                                     </td>
+                                    @endif
                                     </tr>
                                 </tbody>
                                 @endforeach
@@ -60,7 +64,9 @@
                             </div>
                         </div>
                     </div>
-                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_TambahJadwal">Tambah</a> 
+                    @if(auth()->user()->role == 'owner')
+                    <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_TambahJadwal">Tambah</a>
+                    @endif
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
