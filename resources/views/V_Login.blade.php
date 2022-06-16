@@ -32,7 +32,7 @@
         <div class="card container-fluid text-center mx-auto" style="margin-top: 40px;">
             <div class="card-body">
             <div class="row">
-                <h1 class="col mx-0 mb-5 mt-3"style="color:#06DA3E;">KRIPSKUY</h1>
+                <h1 class="col mx-0 mb-5 mt-3 fw-bold"style="color:#06DA3E;">KRIPSKUY</h1>
             </div>
             </div>
                 <form action="/V_Login" method="post">

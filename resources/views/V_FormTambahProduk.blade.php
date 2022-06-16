@@ -20,6 +20,7 @@
             <form action="/V_FormTambahProduk" method="POST">
                 @csrf
                 <div class="row mb-3">
+                    <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
                     <label for="nama_produk" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="nama_produk" name = "nama_produk" placeholder="Masukkan nama produk">

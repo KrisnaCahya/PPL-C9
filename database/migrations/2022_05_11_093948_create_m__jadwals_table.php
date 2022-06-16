@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('m__jadwals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->String('nama');
             $table->string('tugas');
             $table->date('tanggal');

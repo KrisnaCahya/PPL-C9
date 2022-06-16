@@ -20,6 +20,7 @@
             <form action="/V_FormTambahTransaksi" method="POST">
                 @csrf
                 <div class="row mb-3">
+                    <input type="hidden" value="{{ auth()->user()->id }}" name="user_id">
                     <label for="tanggal" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <input type="date" class="form-control @error('tanggal') is-invalid @enderror" id="tanggal" name = "tanggal" placeholder= "Masukkan tanggal">
@@ -31,6 +32,22 @@
                     </div>
                 </div>
                 <div class="row mb-3">
+                    <label for="nama" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <select class="form-select" name="produk_id" aria-label="Default select example">
+                            <option selected>Masukkan Nama Produk</option>
+                            @foreach ($data as $produk)
+                            <option value="{{ $produk->id }}">{{ $produk->nama_produk }}</option>
+                            @endforeach
+                        </select>
+                        @error('nama')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div>
+                <!-- <div class="row mb-3">
                     <label for="nama_produk" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control @error('nama_produk') is-invalid @enderror" id="nama_produk" name = "nama_produk" placeholder="Masukkan nama produk">
@@ -40,7 +57,7 @@
                         </div>
                         @enderror
                     </div>
-                </div>
+                </div> -->
                 <div class="row mb-3">
                     <label for="jumlah_produk" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">

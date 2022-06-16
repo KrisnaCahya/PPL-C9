@@ -18,6 +18,7 @@ class C_TambahProduk extends Controller
     public function create(Request $request){
         // dd($request);
         $validatedData = $request -> validate([
+            'user_id' => ['required'],
             'nama_produk' => ['required'],
             'satuan' => ['required'],
             'tanggal' => ['required','date'],

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('m__produks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('nama_produk');
             $table->string('satuan');
             $table->date('tanggal');

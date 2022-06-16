@@ -9,4 +9,13 @@ class M_Transaksi extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+    
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function Produk(){
+        return $this->belongsTo(M_Produk::class);
+    }
 }

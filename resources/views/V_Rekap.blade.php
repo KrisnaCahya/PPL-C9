@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/css/datepicker.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"
+        integrity="sha256-ErZ09KkZnzjpqcane4SCyyHsKAXMvID9/xwbl/Aq1pc=" crossorigin="anonymous"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.2.0/js/bootstrap-datepicker.min.js"></script>
     <title>Document</title>
@@ -66,67 +69,23 @@
                     </div>
                 </div>
             </div>
+
+            <script type="text/javascript">
+                var dp=$("#datepicker").datepicker({
+                    setDates: new Date(),
+                    autoclose: true,
+                    format: "MM-yyyy",
+                    startView: "months", 
+                    minViewMode: "months"});
+                $('.datepicker').datepicker('setDate', new Date(window.location.pathname.split('/')[2], window.location.pathname.split('/')[3]-1, 1));
+                    dp.on('changeMonth', function(e){
+                    console.log(e.date);
+                    window.location = `/V_Rekap/${e.date.getFullYear()}/${e.date.getMonth()+1}`;
+                });
+
+            </script>
+                
+            
 </body>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script type="text/javascript">
-    var dp=$("#datepicker").datepicker({
-        setDates: new Date(),
-        autoclose: true,
-        format: "MM-yyyy",
-        startView: "months", 
-        minViewMode: "months"});
-    $('.datepicker').datepicker('setDate', new Date(window.location.pathname.split('/')[2], window.location.pathname.split('/')[3]-1, 1));
-        dp.on('changeMonth', function(e){
-        console.log(e.date);
-        window.location = `/V_Rekap/${e.date.getFullYear()}/${e.date.getMonth()+1}`;
-    });
-//         var datas = <?php echo json_encode($datas) ?>
-//         Highcharts.chart('chart', {
-//         title: {
-//             text: 'Rekapitulasi Keuangan KripsKuy'
-//         },
-//         subtitle: {
-//             text: 'Source: itsolutionstuff.com.com'
-//         },
-//          xAxis: {
-//             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-//         },
-//         yAxis: {
-//             title: {
-//                 text: 'Keuntungan'
-//             }
-//         },
-//         legend: {
-//             layout: 'vertical',
-//             align: 'right',
-//             verticalAlign: 'middle'
-//         },
-//         plotOptions: {
-//             series: {
-//                 allowPointSelect: true
-//             }
-//         },
-//         series: [{
-//             name: 'Keuntungan',
-//             data: datas
-//         }],
-//         responsive: {
-//             rules: [{
-//                 condition: {
-//                     maxWidth: 500
-//                 },
-//                 chartOptions: {
-//                     legend: {
-//                         layout: 'horizontal',
-//                         align: 'center',
-//                         verticalAlign: 'bottom'
-//                     }
-//                 }
-//             }]
-//         }
-// });
-
-
-    </script>    
 
 </html>

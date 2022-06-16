@@ -22,17 +22,10 @@ class C_Rekap extends Controller
             "datas" => array(0,0,0,0,0,0,0,0,0,0),
 
 
-            // "weekNumber" => "week"->weekNumberInMonth,
+           
         ]);
-        // $rekap = M_Transaksi::all();
-        // $pemasukan = DB::table("m__transaksis")
-	    //     ->select('tanggal', DB::raw('SUM(pemasukan) as totalPemasukan'))
-        //     ->orderBy("tanggal")
-        //     ->get();
-        // $pengeluaran = DB::table("m__transaksis")
-	    //     ->select('tanggal', DB::raw('SUM(pengeluaran) as totalPengeluaran'))
-        //     ->orderBy("tanggal")
-        //     ->get();
-        // return view('/V_Rekap')->with('rekap', $rekap);
+
+        
     }
+
 }

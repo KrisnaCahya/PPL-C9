@@ -19,10 +19,26 @@
             </div>
             <form action="/V_TambahJadwal" method="POST">
                 @csrf
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name = "nama" placeholder="Masukkan nama">
+                        @error('nama')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
+                    </div>
+                </div> -->
+                <div class="row mb-3">
+                    <label for="nama" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-8">
+                        <select class="form-select" name="user_id" aria-label="Default select example">
+                            <option selected>Masukkan Nama Pegawai</option>
+                            @foreach ($data as $user)
+                            <option value="{{ $user->id }}">{{ $user->nama }}</option>
+                            @endforeach
+                        </select>
                         @error('nama')
                         <div class="invalid-feedback">
                             {{ $message }}

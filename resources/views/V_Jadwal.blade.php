@@ -64,7 +64,7 @@
                             </div>
                         </div>
                     </div>
-                    @if(auth()->user()->role == 'owner')
+                    @if(auth()->user()->role != 'pegawai')
                     <a class="btn btn-warning mb-5" style="margin-top:50px;" href="/V_TambahJadwal">Tambah</a>
                     @endif
         </div>

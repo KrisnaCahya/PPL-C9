@@ -18,6 +18,7 @@ use App\Http\Controllers\C_ProfilPegawai;
 use App\Http\Controllers\C_ubahtransaksi;
 use App\Http\Controllers\C_tambahtransaksi;
 use App\Http\Controllers\C_Rekap;
+use App\Http\Controllers\C_sidebar;
 
 
 /*

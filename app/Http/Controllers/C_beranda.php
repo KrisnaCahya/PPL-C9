@@ -22,4 +22,6 @@ class C_beranda extends Controller
             ]);
         }
     }
+
+    
 }
