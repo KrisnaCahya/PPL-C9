@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2022 at 03:30 AM
+-- Generation Time: Jun 16, 2022 at 04:08 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -70,6 +70,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `m__jadwals` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `nama` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tugas` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal` date NOT NULL,
@@ -83,8 +84,8 @@ CREATE TABLE `m__jadwals` (
 -- Dumping data for table `m__jadwals`
 --
 
-INSERT INTO `m__jadwals` (`id`, `nama`, `tugas`, `tanggal`, `jam_masuk`, `jam_pulang`, `created_at`, `updated_at`) VALUES
-(1, 'pegawai1', 'Rekapitulasi', '2022-05-16', '09:26:00', '21:26:00', '2022-05-18 18:26:39', '2022-05-18 18:26:52');
+INSERT INTO `m__jadwals` (`id`, `user_id`, `nama`, `tugas`, `tanggal`, `jam_masuk`, `jam_pulang`, `created_at`, `updated_at`) VALUES
+(1, 2, 'pegawai 1', 'Rekapitulasi', '2022-06-12', '09:00:00', '17:00:00', '2022-06-16 07:00:40', '2022-06-16 07:00:40');
 
 -- --------------------------------------------------------
 
@@ -94,6 +95,7 @@ INSERT INTO `m__jadwals` (`id`, `nama`, `tugas`, `tanggal`, `jam_masuk`, `jam_pu
 
 CREATE TABLE `m__produks` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `satuan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tanggal` date NOT NULL,
@@ -108,8 +110,8 @@ CREATE TABLE `m__produks` (
 -- Dumping data for table `m__produks`
 --
 
-INSERT INTO `m__produks` (`id`, `nama_produk`, `satuan`, `tanggal`, `jumlah_produk_masuk`, `jumlah_produk_keluar`, `jumlah_sisa_produk`, `created_at`, `updated_at`) VALUES
-(1, 'kripik singkong balado', '250gram', '2022-05-16', 10, 4, 6, '2022-05-18 18:28:35', '2022-05-18 18:28:47');
+INSERT INTO `m__produks` (`id`, `user_id`, `nama_produk`, `satuan`, `tanggal`, `jumlah_produk_masuk`, `jumlah_produk_keluar`, `jumlah_sisa_produk`, `created_at`, `updated_at`) VALUES
+(1, 1, 'kripik singkong original', '250gram', '2022-06-06', 20, 12, 8, '2022-06-16 00:07:21', '2022-06-16 00:07:21');
 
 -- --------------------------------------------------------
 
@@ -119,6 +121,8 @@ INSERT INTO `m__produks` (`id`, `nama_produk`, `satuan`, `tanggal`, `jumlah_prod
 
 CREATE TABLE `m__transaksis` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `produk_id` bigint(20) UNSIGNED NOT NULL,
   `tanggal` date NOT NULL,
   `nama_produk` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `jumlah_produk` int(11) NOT NULL,
@@ -132,10 +136,9 @@ CREATE TABLE `m__transaksis` (
 -- Dumping data for table `m__transaksis`
 --
 
-INSERT INTO `m__transaksis` (`id`, `tanggal`, `nama_produk`, `jumlah_produk`, `pemasukan`, `pengeluaran`, `created_at`, `updated_at`) VALUES
-(1, '2022-05-13', 'kripik singkong balado', 5, 50000, 0, '2022-05-18 18:25:27', '2022-05-18 18:25:27'),
-(2, '2022-05-16', 'kripik singkong original', 5, 70000, 0, '2022-05-18 18:25:51', '2022-05-18 18:25:51'),
-(3, '2022-05-16', 'Minyak goreng', 4, 0, 80000, '2022-05-18 18:26:11', '2022-05-18 18:26:11');
+INSERT INTO `m__transaksis` (`id`, `user_id`, `produk_id`, `tanggal`, `nama_produk`, `jumlah_produk`, `pemasukan`, `pengeluaran`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, '2022-06-11', 'kripik singkong balado', 30, 200000, 50000, '2022-06-16 00:07:43', '2022-06-16 07:00:15'),
+(2, 1, 1, '2022-06-07', 'kripik singkong original', 50, 700000, 300000, '2022-06-16 00:24:06', '2022-06-16 00:24:06');
 
 -- --------------------------------------------------------
 
@@ -192,8 +195,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `nama`, `nohp`, `email`, `alamat`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'fkrsyy', 'Fikri Ariqsya', '081364739191', 'fikriariqsyarahman98@gmail.com', 'Bandung', '$2y$10$Oskewqf1PrPnuUHPpFd0EOWx8AuWutRzhkJ86Tx2IwDPjogVdjjtS', 'owner', NULL, '2022-05-18 18:23:09', '2022-05-18 18:23:09'),
-(2, 'pegawai1', 'pegawai 1', '081364739192', 'Jon.Stephens@sakilastaff.com', 'Bandung', '$2y$10$nBHLv55xtqTxyU/SJa.UMuoWdJBR7zqEWPdNjDbCiI3ySxaFDVgvK', 'pegawai', NULL, '2022-05-18 18:23:40', '2022-05-18 18:23:40');
+(1, 'admin', 'admin', '081234567890', 'admin@gmail.com', 'Bekasi', '$2y$10$B5ErQXRhSH9x0Op5xsVcS.P3PsoURwdf.JkM27pJJDzOMPilLSkwy', 'owner', NULL, '2022-06-16 00:05:48', '2022-06-16 00:05:48'),
+(4, 'pegawai3', 'pegawai 3', '081234567893', 'pegawai3@gmail.com', 'Jakarta', '$2y$10$dtTbBWQZHfvLRajVi5daEOmB.u/4mLWL.bBQwetXn.uu.bD.niala', 'pegawai', NULL, '2022-06-16 07:02:53', '2022-06-16 07:02:53');
 
 --
 -- Indexes for dumped tables
@@ -295,7 +298,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
