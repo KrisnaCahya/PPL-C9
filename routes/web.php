@@ -123,6 +123,6 @@ Route::post('/V_Register', [C_Register::class, 'Create'])->middleware('guest');
 // Menampilkan view form login
 Route::get('/V_Login', [C_Login::class, 'login'])->name('login')->middleware('guest');
 // Mengotentikasi data request dengan database untuk login
-Route::post('/V_Login', [C_Login::class, 'authenticate'])->middleware('guest');
+Route::post('/V_Login', [C_Login::class, 'cekDataValid'])->middleware('guest');
 // Route untuk logout
-Route::post('/logout', [C_Login::class, 'logout'])->middleware('auth');
+Route::get('/logout', [C_Login::class, 'logout'])->middleware('auth');

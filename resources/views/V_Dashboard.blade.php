@@ -18,7 +18,7 @@
         <div class="col-5"style="margin-top: 150px;">
             <div class="container">
                 <p class="title mx-5 mt-3" >Selamat Datang,</p> 
-                <p class="welcomeWord mx-5 mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae illo optio maxime nobis eos magni harum voluptatem enim voluptatum soluta libero molestiae sint veniam sequi quibusdam accusantium est totam illum sapiente porro voluptatibus assumenda dolorem, ad quo. Animi odio, deserunt velit fugit aut sequi eius et similique, quasi maxime cumque praesentium corporis temporibus ullam veritatis omnis incidunt amet minus, tempora reprehenderit natus?</p>
+                <p class="welcomeWord mx-5 mt-3">Kripskuy Merupakan Website ataupun sebuah sistem yang dapat mencatat segala aktivitas bisnis usaha kripik neng widji. Pencatatan tersebut meliputi pencatatan data pegawai, data produk, data transaksi, dan data keuangan.</p>
                 <a href="/V_Login" class="btn btn-light mx-5 mt-3 shadow mb-5 bg-body rounded px-4">Mulai</a>
             </div>
         </div>

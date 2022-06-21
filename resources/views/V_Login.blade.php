@@ -39,20 +39,25 @@
                     <!-- men-generate token agar web terhindar dari intruder -->
                     @csrf
                     <div class="row mb-3">
-                        <label for="username" class="col-sm-2 col-form-label"></label>
+                        <label for="email" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input class="form-control @error('username') is-invalid @enderror" type="text" id="username" name="username" placeholder="Masukkan username" value="{{ old('username') }}">
+                            <input class="form-control @error('email') is-invalid @enderror" type="email" id="email" name="email" placeholder="Masukkan email" value="{{ old('email') }}">
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
-                        @error('username')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                        @enderror
                     </div>
                     <div class="row mb-3">
                         <label for="password" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-8">
-                            <input class="form-control" type="password" id="password" name="password" placeholder="Masukkan Password">
+                            <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" placeholder="Masukkan Password">
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="text-center my-2 mb-5">

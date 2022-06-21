@@ -19,7 +19,7 @@
             </div>
             <form action="/V_Register" method="POST">
                 @csrf
-                <div class="row mb-3">
+                <!-- <div class="row mb-3">
                     <label for="username" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control @error('username') is-invalid @enderror" id="username" name = "username" placeholder="Masukkan Username" value="{{ old('username') }}">
@@ -29,7 +29,7 @@
                         </div>
                         @enderror
                     </div>
-                </div>
+                </div> -->
                 <div class="row mb-3">
                     <label for="nama" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
@@ -83,12 +83,6 @@
                                 {{ $message }}
                             </div>
                             @enderror
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label for="repassword" class="col-sm-2 col-form-label"></label>
-                        <div class="col-sm-8">
-                            <input type="password" class="form-control @error('repassword') is-invalid @enderror" id="repassword" name = "repassword" placeholder= "Konfirmasi Password">
                         </div>
                     </div>
                     <div class="text-right">

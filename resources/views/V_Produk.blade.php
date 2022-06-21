@@ -28,6 +28,7 @@
                                 <thead style="background-color:#FFC13C;">
                                     <tr>
                                     <th scope="col">Id</th>
+                                    <th scope="col">Nama</th>
                                     <th scope="col">Nama Produk</th>
                                     <th scope="col">Satuan</th>
                                     <th scope="col">Tanggal</th>
@@ -39,11 +40,13 @@
                                 </thead>
                                 @foreach ($product as $produk)
                                 <tbody>
-                                    <?php
-                                     $no=1;
-                                    ?>
                                     <tr>
-                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $produk->id }}</td>
+                                    @if (!empty($produk->nama_user))
+                                        <td>{{ $produk->nama_user}}</td>
+                                    @else
+                                        <td>Akun Tidak Tersedia</td>
+                                    @endif
                                     <td>{{ $produk->nama_produk}}</td>
                                     <td>{{ $produk->satuan}}</td>
                                     <td>{{ $produk->tanggal}}</td>

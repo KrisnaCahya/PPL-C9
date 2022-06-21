@@ -83,22 +83,53 @@
                 <div class="col-4">
                     <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                         <div class="card-body">
-                            <form action="/logout" method="POST">
-                                <div class="col">
-                                    <div class="row">
-                                        <img src="https://cdn.discordapp.com/attachments/811787365630738502/969047737083502632/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
-                                    </div>
-                                    <div class="row">
-                                        <div class="text-center">
-                                            @csrf
-                                            <button class="btn mt-4">Logout</button>
+                        <a style="text-decoration:none;color:black;" class="logout" href="#">
+                                    <div class="col">
+                                        <div class="row">
+                                            <img src="https://cdn.discordapp.com/attachments/811787365630738502/969047737083502632/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                                         </div>
-                                    </div>  
-                                </div>
-                            </form>
+                                        <div class="row">
+                                            <div class="text-center">
+                                                @csrf
+                                                <button class="btn mt-4 logout">Logout</button>
+                                            </div>
+                                        </div>  
+                                    </div>
+                                </a>
                         </div>  
                     </div>
                 </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    $('.logout').click(function(){
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-warning mx-3',
+        cancelButton: 'btn btn-danger mx-3'
+    },
+        buttonsStyling: false
+})
+
+    swalWithBootstrapButtons.fire({
+        title: "Peringatan!",
+        text: "Apakah Anda yakin ingin logout? ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FFC107',
+        cancelButtonColor: '#FF5252',
+        confirmButtonText: 'Iya',
+        cancelButtonText: 'Tidak',
+        reverseButtons: true
+    }).then((result) => {
+    if (result.isConfirmed) {
+        window.location = "/logout"
+        
+  }
+})
+    })
+    
+</script>
 </html>

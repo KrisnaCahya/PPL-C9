@@ -20,6 +20,22 @@ class C_TambahJadwal extends Controller
     }
 
     public function create(Request $request){
+        // $validatedData = $request -> validate([
+        //     'user_id' => ['required'],
+        //     'tugas' => ['required'],
+        //     'tanggal' => ['required'],
+        //     'jam_masuk' => ['required'],
+        //     'jam_pulang' => ['required'],
+        // ]);
+        
+        // $validatedData['nama'] = User::find($request->user_id)->nama;
+        // dd($validatedData);
+        $this->cekDataNull($request);
+        M_Jadwal::create($this->cekDataNull($request));
+        return redirect('/V_Jadwal');
+    }
+
+    public function cekDataNull(Request $request){
         $validatedData = $request -> validate([
             'user_id' => ['required'],
             'tugas' => ['required'],
@@ -29,9 +45,7 @@ class C_TambahJadwal extends Controller
         ]);
         
         $validatedData['nama'] = User::find($request->user_id)->nama;
-        // dd($validatedData);
-        
-        M_Jadwal::create($validatedData);
-        return redirect('/V_Jadwal');
+    
+        return $validatedData;
     }
 }

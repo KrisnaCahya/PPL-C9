@@ -44,7 +44,7 @@
                                      $no=1;
                                     ?>
                                     <tr>
-                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $rowDataJadwal->id }}</td>
                                     <td>{{ $rowDataJadwal->nama }}</td>
                                     <td>{{ $rowDataJadwal->tugas }}</td>
                                     <td>{{ $rowDataJadwal->tanggal }}</td>

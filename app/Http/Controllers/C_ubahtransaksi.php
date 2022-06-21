@@ -17,6 +17,21 @@ class C_UbahTransaksi extends Controller
     public function update(Request $request, $id){
         // dd($request);
         $data = M_Transaksi::find($id);
+        // $validatedData = $request->validate([
+        //     'tanggal' => ['required'],
+        //     'nama_produk' => ['required',],
+        //     'jumlah_produk' => ['required'],
+        //     'pemasukan' => ['required'],
+        //     'pengeluaran' => ['required'],
+        // ]);
+        
+        $this->cekDataNull($request);
+        $data->update($this->cekDataNull($request));
+        $request->session()->flash('updateSuccess', 'Ubah data transaksi telah berhasil!');
+        return redirect('/V_Transaksi'); 
+    }
+
+    public function cekDataNull(Request $request){
         $validatedData = $request->validate([
             'tanggal' => ['required'],
             'nama_produk' => ['required',],
@@ -24,9 +39,7 @@ class C_UbahTransaksi extends Controller
             'pemasukan' => ['required'],
             'pengeluaran' => ['required'],
         ]);
-        
-        $data->update($validatedData);
-        $request->session()->flash('updateSuccess', 'Ubah data transaksi telah berhasil!');
-        return redirect('/V_Transaksi'); 
+
+        return $validatedData;
     }
 }

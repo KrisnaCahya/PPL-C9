@@ -104,7 +104,7 @@
                                     <img src="https://cdn-icons-png.flaticon.com/512/557/557933.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
                                 </div>
                                 <div class="row">
-                                    <p class="text-center mt-4">Rekapitulasi</p>
+                                    <p class="text-center mt-4">Rekap Keuangan</p>
                                 </div>
                             </div>
                         </a>
@@ -115,8 +115,7 @@
                     <div class="col-xl-4 col-md-3 col-sm-2">
                         <div class="card container-fluid" style="width: 15rem;background-color:#DEF7E5;">
                             <div class="card-body">
-                                <a style="text-decoration:none;color:black;" href="/login">
-                                <form action="/logout" method="POST">
+                                <a style="text-decoration:none;color:black;" class="logout" href="#">
                                     <div class="col">
                                         <div class="row">
                                             <img src="https://cdn.discordapp.com/attachments/811787365630738502/969047737083502632/unknown.png" alt="" srcset="" style="width: 100px;height:75px;" class="mx-auto mt-3">
@@ -124,11 +123,10 @@
                                         <div class="row">
                                             <div class="text-center">
                                                 @csrf
-                                                <button class="btn mt-4">Logout</button>
+                                                <button class="btn mt-4 logout">Logout</button>
                                             </div>
                                         </div>  
                                     </div>
-                                </form>
                                 </a>
                             </div>  
                         </div>
@@ -137,5 +135,36 @@
                 
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
+<script>
+    $('.logout').click(function(){
+        const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+        confirmButton: 'btn btn-warning mx-3',
+        cancelButton: 'btn btn-danger mx-3'
+    },
+        buttonsStyling: false
+})
+
+    swalWithBootstrapButtons.fire({
+        title: "Peringatan!",
+        text: "Apakah Anda yakin ingin logout? ",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#FFC107',
+        cancelButtonColor: '#FF5252',
+        confirmButtonText: 'Iya',
+        cancelButtonText: 'Tidak',
+        reverseButtons: true
+    }).then((result) => {
+    if (result.isConfirmed) {
+        window.location = "/logout"
+        
+  }
+})
+    })
+    
+</script>
 </html>

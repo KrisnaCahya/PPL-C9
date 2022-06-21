@@ -15,16 +15,27 @@ class C_UbahProfil extends Controller
 
     public function update(Request $request){
         // dd($request);
+        // $validatedData = $request->validate([
+        //     'nama' => ['required','min:5'],
+        //     'nohp' => ['required','min:5','max:15'],
+        //     'email' => ['required','email'],
+        //     'alamat' => ['required','min:5','max:200'],
+        // ]);
+        $this->isDataNull($request);
+        User::where('id',$request->id) -> update($this->isDataNull($request));
+        $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
+        return redirect('/V_Profil');
+
+    }
+
+    public function isDataNull(Request $request){
         $validatedData = $request->validate([
             'nama' => ['required','min:5'],
             'nohp' => ['required','min:5','max:15'],
             'email' => ['required','email'],
             'alamat' => ['required','min:5','max:200'],
         ]);
-        
-        User::where('id',$request->id) -> update($validatedData);
-        $request->session()->flash('updateSuccess', 'Ubah data profil telah berhasil!');
-        return redirect('/V_Profil');
 
+        return $validatedData;
     }
 }

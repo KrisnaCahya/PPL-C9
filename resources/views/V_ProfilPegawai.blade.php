@@ -31,7 +31,7 @@
                                 <p>Email        : {{ $pegawai-> email }}</p>
                                 @csrf
                                 <div class="text-end">
-                                <a href="#" class="btn btn-danger fa fa-trash delete px-5 py-2 my-3" data-id="{{ $pegawai->id }}" data-name="{{ $pegawai->nama }}"></a>
+                                <a href="#" class="btn btn-danger delete px-5 py-2 my-3" data-id="{{ $pegawai->id }}" data-name="{{ $pegawai->nama }}">Hapus</a>
                                     <input type="hidden" name="id" value="{{ $pegawai-> id }}">
                                 </div>
                             </div>

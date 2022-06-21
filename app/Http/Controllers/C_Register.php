@@ -19,11 +19,21 @@ class C_Register extends Controller
 
     // Membuat method store untuk proses pembuatan akun
     public function Create(Request $request) {
+            $this->isDataNull($request);
+            // Menuliskan data yang telah divalidasi ke dalam database User
+            User::create($this->isDataNull($request));
+            // Menampilkan pesan flash bahwa akun berhasil dibuat
+            $request->session()->flash('success','Akun berhasil dibuat! Silahkan login');
+            // Mengalihkan ke halaman login
+            return redirect('/V_Login');
+        
+    }
+
+    public function isDataNull(Request $request){
         // Validasi data dengan syarat tertentu
         $validatedData = $request -> validate([
-            'username' => ['required','unique:users'],
             'nama' => ['required'],
-            'nohp' => ['required','unique:users'],
+            'nohp' => ['required'],
             'email' => ['required','unique:users'],
             'alamat' => ['required'],
             'password' => ['required'],
@@ -33,12 +43,7 @@ class C_Register extends Controller
        
             // Mengenkripsi password
             $validatedData['password'] = bcrypt($validatedData['password']);
-            // Menuliskan data yang telah divalidasi ke dalam database User
-            User::create($validatedData);
-            // Menampilkan pesan flash bahwa akun berhasil dibuat
-            $request->session()->flash('success','Akun berhasil dibuat! Silahkan login');
-            // Mengalihkan ke halaman login
-            return redirect('/V_Login');
         
+            return $validatedData;
     }
 }

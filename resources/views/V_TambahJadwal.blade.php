@@ -34,7 +34,7 @@
                     <label for="nama" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <select class="form-select" name="user_id" aria-label="Default select example">
-                            <option selected>Masukkan Nama Pegawai</option>
+                            <!-- <option selected>Masukkan Nama Pegawai</option> -->
                             @foreach ($data as $user)
                             <option value="{{ $user->id }}">{{ $user->nama }}</option>
                             @endforeach

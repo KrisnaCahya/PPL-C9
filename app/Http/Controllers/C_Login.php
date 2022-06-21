@@ -17,10 +17,11 @@ class C_Login extends Controller
     }
 
     // Method untuk proses otentikasi atau pengecekan data untuk login
-    public function authenticate(Request $request){
+    public function cekDataValid(Request $request){
         // Validasi pengisian form login
         $credentials = $request -> validate([
-            'username' => 'required',
+            // 'username' => 'required',
+            'email' => 'required',
             'password' => 'required',
         ]);
 

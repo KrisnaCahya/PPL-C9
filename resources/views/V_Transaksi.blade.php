@@ -26,6 +26,8 @@
                             <table class="table table-bordered border-dark mt-5">
                                 <thead style="background-color:#FFC13C;">
                                     <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Nama</th>
                                     <th scope="col">Tanggal</th>
                                     <th scope="col">Nama Produk</th>
                                     <th scope="col">Jumlah Produk</th>
@@ -38,6 +40,12 @@
                                 <tbody>
 
                                     <tr>
+                                    <td>{{ $itemTransaksi->id}}</td>
+                                    @if (!empty($itemTransaksi->nama_user))
+                                        <td>{{ $itemTransaksi->nama_user}}</td>
+                                    @else
+                                        <td>Akun Tidak Tersedia</td>
+                                    @endif
                                     <td>{{ $itemTransaksi->tanggal}}</td>
                                     <td>{{ $itemTransaksi->nama_produk}}</td>
                                     <td>{{ $itemTransaksi->jumlah_produk}}</td>

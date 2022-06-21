@@ -35,12 +35,11 @@
                     <label for="nama" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-8">
                         <select class="form-select" name="produk_id" aria-label="Default select example">
-                            <option selected>Masukkan Nama Produk</option>
                             @foreach ($data as $produk)
                             <option value="{{ $produk->id }}">{{ $produk->nama_produk }}</option>
                             @endforeach
                         </select>
-                        @error('nama')
+                        @error('produk_id')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

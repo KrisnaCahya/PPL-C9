@@ -48,7 +48,7 @@
           </div>
           <div class="form-group">
             <div class="text-center">
-              <a class="btn btn-warning mb-5 mt-4" href="/V_FormUbahProfil">Ubah Data</a> 
+              <a class="btn btn-warning mb-5 mt-4" href="/V_FormUbahProfil">Ubah Profil</a> 
             </div>
           </div>
         </form>
